@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html', { "title": "Строительство автомобильных дорог" })
+
+  <body>
+    @@include("_svg.html")
+    <div class="wrap">
+      <!--header-->
+      @@include('_header.html', { "class": "header" })
+      <!--main-->
+      <main class="main">
+        <!--breadcrumbs-->
+        <div class="breadcrumbs">
+          <div class="container">
+            <ul>
+              <li><a href="#" class="link">Главная</a></li>
+              <li><a href="#" class="link">Услуги</a></li>
+              <li class="active">Строительство автомобильных дорог</li>
+            </ul>
+          </div>
+        </div>
+        <!--about-->
+        <section class="service">
+          <div class="container">
+            <h1 class="h2">Строительство автомобильных дорог</h1>
+            <div class="page-tags">
+              <span>Усинск</span>
+              <span>Ямал</span>
+            </div>
+            <!--page-content-->
+            <div class="page-content">
+              <img src="img/service-1.jpg" alt="Строительство автомобильных дорог">
+              <h3>Капитальное строительство автомобильных дорог;</h3>
+              <p>Описание</p>
+              <h3>Капитальное строительство объектов инфраструктуры разрабатываемых месторождений (трубопроводы, монтаж технологического оборудования и ЛЭП);</h3>
+              <p>Описание</p>
+              <h3>Капитальное строительство объектов инфраструктуры разрабатываемых месторождений (трубопроводы, монтаж технологического оборудования и ЛЭП);</h3>
+              <p>Описание</p>
+              <button class="btn main-btn modal-show-btn" data-modal="service-modal">Оставить заявку</button>
+            </div>
+          </div>
+        </section>
+        @@include('_page-gallery.html')
+        @@include('_main-projects.html') @@include("_feedback-form.html", { "h2": "Получить консультацию", "p": "Оставьте запрос и мы свяжемся с вами в ближайшее время" })
+      </main>
+      <!--footer-->
+      @@include('_footer.html') @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+  </body>
+</html>

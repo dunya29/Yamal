@@ -1,0 +1,97 @@
+.video-reviews {
+    h3 {
+        margin-bottom: 20px;
+    }
+    .media-cover {
+        padding-top: 56.12%;
+    }
+}
+.text-reviews {
+    h3 {
+        margin-bottom: 20px;
+    }
+}
+.item-review {
+    padding: 16px;
+    background: $light-gray;
+    .h4 {
+        margin-bottom: 8px;
+    }
+    &__rating {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 12px;
+    }
+    &__details {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -12px;
+        span {
+            font-size: 14px;
+            color: rgba($black, .5);
+            margin: 0 12px 12px;
+        }
+    }
+    &__content {
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @media (max-width: $bp3) {
+        &__details {
+            flex-direction: column;
+            margin: 0 0 4px;
+            span {
+                margin: 0 0 8px;
+            }
+        }
+    }
+}
+.rating-container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    svg {
+        flex: 0 0 16px;
+        width: 16px;
+        max-width: none;
+        height: 16px;
+        max-height: none;
+        margin-right: 8px;
+    }
+    &.light {
+        svg {
+            fill: rgba($red, .5);
+        }
+    }
+    &.dark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        svg {
+            fill: $red
+        }
+    }
+}
+.work-page {
+    .page-swipers {
+        margin-top: 20px;
+    }
+    .video-reviews {
+        margin: 40px 0;
+    }
+    .swiper-wrapper {
+        transition-timing-function: ease-out;
+        margin-bottom: 20px;
+    }
+    .swiper-pagination {
+        margin: 0 24px;
+    }
+    .swiper-pagination-bullet {
+        flex: 0 0 12px;
+        width: 12px;
+        height: 12px;
+        margin-right: 8px
+    }
+}

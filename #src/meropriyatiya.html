@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {
+"title": "Мероприятия"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+        "class": "header"
+        })
+        <!--main-->
+        <main class="main">
+            @@include('_breadcrumbs-2.html', {
+                "page": "Мероприятия"
+                })
+            <!--events-->
+            <section class="events">
+                <div class="container">
+                    <h1 class="h2">Мероприятия</h1>
+                    <div class="page-row">
+                        <!--page aside-->
+                        <aside class="page-nav">
+                            <nav>
+                                <ul class="page-nav__list">
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Вакансии</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Условия работы</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Корпоротиваня культура</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Люди ДТК Ямал</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Как мы работаем</a></li>
+                                    <li class="page-nav__item active"><a href="#" class="page-nav__link active">Мероприятия</a></li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Охрана труда</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Производственная безопасность</a></li>
+                                                <li><a href="#">Дорожное движение</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Профсоюз</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Активная жизнь с профсоюзом</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <!--page-row__content-->
+                        <div class="page-row__content">
+                            <!--page-action-->
+                            <div class="page-action">
+                                @@include('_custom-select.html')
+                            </div>
+                            <div class="events__items">
+                                @@include('_item-news.html', {"tag": "Мероприятия"})
+                                @@include('_item-news.html', {"tag": "Мероприятия"})
+                                @@include('_item-news.html', {"tag": "Мероприятия"})
+                                @@include('_item-news.html', {"tag": "Мероприятия"})
+                                @@include('_item-news.html', {"tag": "Мероприятия"})
+                                @@include('_item-news.html', {"tag": "Мероприятия"})
+                            </div>
+                            @@include('_pagination.html')
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

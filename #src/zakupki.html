@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {
+"title": "Закупки"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+        "class": "header"
+        })
+        <!--main-->
+        <main class="main">
+            @@include('_breadcrumbs.html', {
+                "page": "Закупки"
+                })
+            <!--purchases-->
+            <section class="purchases">
+                <div class="container">
+                    <h1 class="h2">Закупки</h1>
+                    <div class="page-row">
+                        <!--page aside-->
+                        <aside class="page-nav mob-visible">
+                            <nav>
+                                <ul class="page-nav__list">
+                                    <li class="page-nav__item active"><a href="#" class="page-nav__link active">Закупки</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Для поставщиков</a></li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <!--page-row__content-->
+                        <div class="page-row__content">
+                            <!--page-action-->
+                            <div class="page-action">
+                                <div class="select-custom" aria-expanded="false">
+                                    <div class="select-custom__selected"><span>Тип закупки</span></div>
+                                    <ul class="select-custom__options">
+                                      <li class="select-custom__option selected"><a href="#">Все</a></li>
+                                      <li class="select-custom__option"><a href="#" >Тип закупки-1</a></li>
+                                      <li class="select-custom__option"><a href="#" >Тип закупки-2</a></li>
+                                      <li class="select-custom__option"><a href="#" >Тип закупки-3</a></li>
+                                    </ul>
+                                </div>
+                                @@include('_custom-select.html')
+                            </div>
+                            <!--purchases__items-->
+                            <div class="purchases__items">
+                                @@loop('_item-purchases.html', [
+                                {"status": '<span class="item-purchases__status active">Активный</span>', "link": "Открыть на Тэк-торг"},
+                                {"status": '<span class="item-purchases__status">Завершенный</span>', "link": "Открыть"},
+                                {"status": '<span class="item-purchases__status">Завершенный</span>', "link": "Открыть"}
+                                ])
+                            </div>
+                            @@include('_pagination.html')
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

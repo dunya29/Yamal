@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {
+"title": "Люди ДТК Ямал"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+        "class": "header"
+        })
+        <!--main-->
+        <main class="main">
+            @@include('_breadcrumbs-2.html', {
+            "page": "Люди ДТК Ямал"
+            })
+            <!--events-->
+            <section class="employees">
+                <div class="container">
+                    <h1 class="h2">Люди ДТК Ямал</h1>
+                    <div class="page-row">
+                        <!--page aside-->
+                        <aside class="page-nav">
+                            <nav>
+                                <ul class="page-nav__list">
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Вакансии</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Условия работы</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Корпоротиваня культура</a></li>
+                                    <li class="page-nav__item active"><a href="#" class="page-nav__link active">Люди ДТК Ямал</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Как мы работаем</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Мероприятия</a></li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Охрана труда</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Производственная безопасность</a></li>
+                                                <li><a href="#">Дорожное движение</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Профсоюз</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Активная жизнь с профсоюзом</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <!--page-row__content-->
+                        <div class="page-row__content"> 
+                            <ul class="employees__years">
+                                <li data-nav="2023" class="active">2023</li>
+                                <li data-nav="2022">2022</li>
+                                <li data-nav="2021">2021</li>
+                                <li data-nav="2020">2020</li>
+                                <li data-nav="2019">2019</li>
+                                <li data-nav="2018">2018</li>
+                                <li data-nav="2017">2017</li>
+                            </ul>
+                            <div class="employees__blocks">
+                                <div class="employees__block active" data-block="2023">
+                                    <div class="employees__lbl">Работников:<span class="text-l">1200</span></div>
+                                    <div class="employees__items">
+                                        @@loop("_item-employees.html", [
+                                            {"lbl": "Категория", "txt1": "Руководители", "perc1": "27%","txt2": "Специалисты и служащие", "perc2": "100%","txt3": "Рабочие", "perc3": "67%", },
+                                            {"lbl": "Регион", "txt1": "Усинск", "perc1": "37%","txt2": "Норильск", "perc2": "70%","txt3": "Ямал", "perc3": "50%", },
+                                            {"lbl": "Образование", "txt1": "Высшее", "perc1": "40%","txt2": "Среднее", "perc2": "50%","txt3": "Без образования", "perc3": "27%", },
+                                        ])
+                                        <div class="item-employees item-employees--reg">
+                                            <h3>Реестры</h3>
+                                            <div class="item-employees__det">
+                                                <span>Нострой</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>ноприз</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>накс</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="employees__block" data-block="2022">
+                                    <div class="employees__lbl">Работников:<span class="text-l">1000</span></div>
+                                    <div class="employees__items">
+                                        @@loop("_item-employees.html", [
+                                            {"lbl": "Категория", "txt1": "Руководители", "perc1": "27%","txt2": "Специалисты и служащие", "perc2": "100%","txt3": "Рабочие", "perc3": "67%", },
+                                            {"lbl": "Регион", "txt1": "Усинск", "perc1": "37%","txt2": "Норильск", "perc2": "70%","txt3": "Ямал", "perc3": "50%", },
+                                            {"lbl": "Образование", "txt1": "Высшее", "perc1": "40%","txt2": "Среднее", "perc2": "50%","txt3": "Без образования", "perc3": "27%", },
+                                        ])
+                                        <div class="item-employees item-employees--reg">
+                                            <h3>Реестры</h3>
+                                            <div class="item-employees__det">
+                                                <span>Нострой</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>ноприз</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>накс</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="employees__block" data-block="2021">
+                                    <div class="employees__lbl">Работников:<span class="text-l">800</span></div>
+                                    <div class="employees__items">
+                                        @@loop("_item-employees.html", [
+                                            {"lbl": "Категория", "txt1": "Руководители", "perc1": "27%","txt2": "Специалисты и служащие", "perc2": "100%","txt3": "Рабочие", "perc3": "67%", },
+                                            {"lbl": "Регион", "txt1": "Усинск", "perc1": "37%","txt2": "Норильск", "perc2": "70%","txt3": "Ямал", "perc3": "50%", },
+                                            {"lbl": "Образование", "txt1": "Высшее", "perc1": "40%","txt2": "Среднее", "perc2": "50%","txt3": "Без образования", "perc3": "27%", },
+                                        ])
+                                        <div class="item-employees item-employees--reg">
+                                            <h3>Реестры</h3>
+                                            <div class="item-employees__det">
+                                                <span>Нострой</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>ноприз</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>накс</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="employees__block" data-block="2020">
+                                    <div class="employees__lbl">Работников:<span class="text-l">600</span></div>
+                                    <div class="employees__items">
+                                        @@loop("_item-employees.html", [
+                                            {"lbl": "Категория", "txt1": "Руководители", "perc1": "27%","txt2": "Специалисты и служащие", "perc2": "100%","txt3": "Рабочие", "perc3": "67%", },
+                                            {"lbl": "Регион", "txt1": "Усинск", "perc1": "37%","txt2": "Норильск", "perc2": "70%","txt3": "Ямал", "perc3": "50%", },
+                                            {"lbl": "Образование", "txt1": "Высшее", "perc1": "40%","txt2": "Среднее", "perc2": "50%","txt3": "Без образования", "perc3": "27%", },
+                                        ])
+                                        <div class="item-employees item-employees--reg">
+                                            <h3>Реестры</h3>
+                                            <div class="item-employees__det">
+                                                <span>Нострой</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>ноприз</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>накс</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="employees__block" data-block="2019">
+                                    <div class="employees__lbl">Работников:<span class="text-l">400</span></div>
+                                    <div class="employees__items">
+                                        @@loop("_item-employees.html", [
+                                            {"lbl": "Категория", "txt1": "Руководители", "perc1": "27%","txt2": "Специалисты и служащие", "perc2": "100%","txt3": "Рабочие", "perc3": "67%", },
+                                            {"lbl": "Регион", "txt1": "Усинск", "perc1": "37%","txt2": "Норильск", "perc2": "70%","txt3": "Ямал", "perc3": "50%", },
+                                            {"lbl": "Образование", "txt1": "Высшее", "perc1": "40%","txt2": "Среднее", "perc2": "50%","txt3": "Без образования", "perc3": "27%", },
+                                        ])
+                                        <div class="item-employees item-employees--reg">
+                                            <h3>Реестры</h3>
+                                            <div class="item-employees__det">
+                                                <span>Нострой</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>ноприз</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>накс</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="employees__block" data-block="2018">
+                                    <div class="employees__lbl">Работников:<span class="text-l">1200</span></div>
+                                    <div class="employees__items">
+                                        @@loop("_item-employees.html", [
+                                            {"lbl": "Категория", "txt1": "Руководители", "perc1": "27%","txt2": "Специалисты и служащие", "perc2": "100%","txt3": "Рабочие", "perc3": "67%", },
+                                            {"lbl": "Регион", "txt1": "Усинск", "perc1": "37%","txt2": "Норильск", "perc2": "70%","txt3": "Ямал", "perc3": "50%", },
+                                            {"lbl": "Образование", "txt1": "Высшее", "perc1": "40%","txt2": "Среднее", "perc2": "50%","txt3": "Без образования", "perc3": "27%", },
+                                        ])
+                                        <div class="item-employees item-employees--reg">
+                                            <h3>Реестры</h3>
+                                            <div class="item-employees__det">
+                                                <span>Нострой</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>ноприз</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>накс</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="employees__block" data-block="2017">
+                                    <div class="employees__lbl">Работников:<span class="text-l">1200</span></div>
+                                    <div class="employees__items">
+                                        @@loop("_item-employees.html", [
+                                            {"lbl": "Категория", "txt1": "Руководители", "perc1": "27%","txt2": "Специалисты и служащие", "perc2": "100%","txt3": "Рабочие", "perc3": "67%", },
+                                            {"lbl": "Регион", "txt1": "Усинск", "perc1": "37%","txt2": "Норильск", "perc2": "70%","txt3": "Ямал", "perc3": "50%", },
+                                            {"lbl": "Образование", "txt1": "Высшее", "perc1": "40%","txt2": "Среднее", "perc2": "50%","txt3": "Без образования", "perc3": "27%", },
+                                        ])
+                                        <div class="item-employees item-employees--reg">
+                                            <h3>Реестры</h3>
+                                            <div class="item-employees__det">
+                                                <span>Нострой</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>ноприз</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                            <div class="item-employees__det">
+                                                <span>накс</span>
+                                                <span class="item-employees__date">С 23.04.2021</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

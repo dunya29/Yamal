@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {
+"title": "Условия работы"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+        "class": "header"
+        })
+        <!--main-->
+        <main class="main">
+            @@include('_breadcrumbs-2.html', {
+            "page": "Условия работы"
+            })
+            <!--events-->
+            <section class="conditions">
+                <div class="container">
+                    <h1 class="h2">Условия работы</h1>
+                    <div class="page-row">
+                        <!--page aside-->
+                        <aside class="page-nav">
+                            <nav>
+                                <ul class="page-nav__list">
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Вакансии</a></li>
+                                    <li class="page-nav__item active"><a href="#" class="page-nav__link active">Условия работы</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Корпоротиваня культура</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Люди ДТК Ямал</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Как мы работаем</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Мероприятия</a></li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Охрана труда</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Производственная безопасность</a></li>
+                                                <li><a href="#">Дорожное движение</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Профсоюз</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Активная жизнь с профсоюзом</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <!--page-row__content-->
+                        <div class="page-row__content">                           
+                            <div class="page-content">
+                                <div class="top-cond">
+                                    <div class="top-cond__content">
+                                        <svg><use xlink:href="img/icons/sprite.svg#logo"></use></svg>
+                                        <span class="h3">МЫ ЗАБОТИМСЯ О ТОМ, ЧТОБЫ НАШИ РАБОТНИКИ БЫЛИ МАКСИМАЛЬНО ЗАИНТЕРЕСОВАНЫ В ЭФФЕКТИВНОСТИ СВОИХ ПОДРАЗДЕЛЕНИЙ И КОМПАНИИ<br>В ЦЕЛОМ</span>
+                                    </div>
+                                </div>
+                                <p>Цель кадровой политики привлечение в команду талантливых людей и стимулирование их постоянного профессионального роста для развития ДТК Ямал.</p>
+                                <p>Мы приглашаем трудолюбивых, талантливых и инициативных людей к совместной работе над строительными проектами, имеющими важное значение для социально экономического развития России и ее регионов.</p>
+                                <div class="stat-items">
+                                    @@loop("_item-stat.html", [
+                                      {"span": "1800+", "p": "Профессионалов своего дела в нашей команде"},
+                                      {"span": "370+", "p": "квалифицированных инженерно-технических специалистов"}
+                                    ])
+                                </div>
+                                <h3>Что мы предлагаем</h3>
+                                <div class="conditions__items">
+                                    @@include("_item-cond.html", {"txt": "<h4>Официальное<br>трудоустройство</h4>", "svg": "1"})
+                                    @@include("_item-cond.html", {"txt": "<h4>Конкурентная заработная плата, выплата вахтовой надбавки</h4>", "svg": "2"})
+                                    @@include("_item-cond.html", {"txt": "<h4>Современные и удобные рабочие места, комфортные условия проживания</h4>", "svg": "3"})
+                                    @@include("_item-cond.html", {"txt": "<h4>Интересные задачи и новые возможности.</h4><h4>Обучение и карьерный рост</h4>", "svg": "4"})
+                                    @@include("_item-cond.html", {"txt": "<h4>Оплачиваемый проезд к месту работы.</h4><h4>Обеспечение вкусным<br>и здоровым питанием</h4>", "svg": "5"})
+                                    @@include("_item-cond.html", {"txt": "<h4>Корпоративные мероприятия, команды по футболу, волейболу<br>и иным видам спорта</h4>", "svg": "6"})
+                                </div>
+                                <div class="soc-pack">
+                                    <div class="soc-pack__inner">
+                                        <h3>Социальный пакет для наших сотрудников включает</h3>
+                                    <div class="soc-pack__items">
+                                        <div class="item-stat">
+                                            <span class="text-l">1</span>
+                                            <p>Оплату больничных, отпусков, предоставление дополнительных отпусков и оплаты проезда работающим в особых климатических условиях</p>
+                                        </div>
+                                        <div class="item-stat">
+                                            <span class="text-l">2</span>
+                                            <p>Оказание адресной материальной помощи в экстренных случаях</p>
+                                        </div>
+                                        <div class="item-stat">
+                                            <span class="text-l">3</span>
+                                            <p>Единовременные выплаты к юбилейным датам, к Дню работников дорожного хозяйства и других торжественных событий</p>
+                                        </div>
+                                        <div class="item-stat">
+                                            <span class="text-l">4</span>
+                                            <p>Новогодние подарки детям</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="require-cond">
+                                    <div class="require-cond__content">
+                                        <h3>Мы ценим в наших струдниках:</h3>
+                                        <ol>
+                                            <li>Умение работать в команде и желание участвовать не только в реализации,
+                                                но и в
+                                                разработке проектов</li>
+                                            <li>Энергичность и целеустремленность, направленные на карьерный и
+                                                профессиональный
+                                                рост</li>
+                                            <li>Умение и желание развиваться и развивать других</li>
+                                        </ol>
+                                    </div>
+                                    <div class="media-cover require-cond__img">
+                                        <img src="img/conditions-req.jpg" alt="">
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            @@include("_feedback-form.html", {
+                "h2": "Анонимное обращение",
+                "p": "Мы ценим каждого сотрудника, и всегда готовы выслушать"
+            })
+        </main>
+        <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

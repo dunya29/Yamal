@@ -1,0 +1,180 @@
+.link-purchase {
+    margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0!important;
+    }    
+    h4 {
+        margin: 0 0 16px;
+    }
+    
+    a {
+        width: 100%;
+        padding: 16px;
+        background: $light-gray;
+        border: 0;   
+        &:hover {
+            background: $black;
+            color: $white;
+            svg {
+                fill: $white;
+            }
+        }
+    }
+    @media (max-width: $bp3) {
+        h4 {
+            font-size: 20px;
+        }
+    }
+}
+.item-purchases {
+    padding: 20px 16px;
+    border-radius: 4px;
+    background: $light-gray;
+    margin-bottom: 20px;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        h3 {
+            margin: 0 20px 0 0
+        }
+    }
+    &__status {
+        color: #B5ADAD;
+        line-height: 31px;
+        &.active {
+            color: #1BD950;
+        }
+    }
+    &__row {
+        display: flex;
+    }
+    &__left {
+        flex: 0 0 53%;
+    }
+    &__det {
+        margin-bottom: 20px;
+        span {
+            display: block;
+            &:first-child {
+                opacity: 0.5;
+                margin-bottom: 8px;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0!important;
+        }
+    }
+    &__right {
+        padding-left: 20px;
+        border-left: 1px solid rgba(31, 3, 3, 0.30);
+        margin-left: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .main-btn {
+            min-width: 202px;
+            margin-top: auto;
+        }
+    }
+    @media (max-width: $bp2) {
+        &__left {
+            flex: 0 0 54%;
+        }
+    }
+    @media (max-width: $bp3) {
+        padding: 16px;
+        .btn {
+            width: 100%;
+            max-width: 340px;
+            margin: 0 auto;
+        }
+        &__header {
+            display: block;
+            h3 {
+                margin: 0 0 8px
+            }
+        }
+        &__status {
+            line-height: 1.2;
+        }
+        &__row {
+            display: block;
+        }
+        &__det {
+            margin-bottom: 16px;
+            span {
+                font-size: 14px;
+                line-height: 1.2;
+            }
+        }
+        &__right {
+            padding: 20px 0 0;
+            border-left: 0;
+            border-top: 1px solid rgba(31, 3, 3, 0.30);
+            margin: 20px 0 0;
+        }
+    }
+}
+.purchase {
+    overflow: visible;
+    h1 {
+        margin-bottom: 30px;
+    }
+    .page-row {
+        display: grid;
+        grid-template-columns: 1fr calc(32.3% + 20px);
+        grid-template-rows: auto 1fr;
+        h1 {
+            grid-area: 1/1/2/3;
+        }
+    }
+    .page-sticky {
+        margin: 0 0 0 20px;
+        order: 1;
+    }
+    .page-content {
+        max-width: 860px;
+        p {
+           margin-bottom: 12px;
+        }
+    }
+    .item-purchases__left {
+        flex: 0 0 47%;
+    }
+    .item-purchases, .link-purchase {
+        margin: 40px 0 0;
+    }
+    @media (max-width: $bp1) {
+        .page-row {
+            display: block;
+        }
+        .page-sticky {
+            margin: 0 0 24px;
+        }
+        .page-sticky__btns a {
+            flex: 0 0 200px;
+        }
+    }
+    @media (max-width: $bp2) {
+        h1 {
+            margin-bottom: 20px;
+        }
+        .item-purchases__left {
+            flex: 0 0 46%;
+        }
+    }
+    @media (max-width: $bp3) {
+        .item-purchases, .link-purchase {
+            margin: 20px 0 0;
+        }
+        .page-content {
+            p {
+                font-size: 14px;
+                line-height: 1.2;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+

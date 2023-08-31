@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Новости"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+            "class": "header"
+            })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs.html', {   
+                "page": "Новости"
+            })
+            <section class="news">
+                <div class="container">
+                    <h1 class="h2">Новости</h1>
+                    <div class="page-action">
+                        <a href="#" class="btn page-action__link active">Все</a>
+                        <a href="#" class="btn page-action__link">Новости ДТК Ямал</a>
+                        <a href="#" class="btn page-action__link">Мероприятия ДТК Ямал</a>
+                        <a href="#" class="btn page-action__link">Активная жизнь с профсоюзом</a>
+                        <div class="news__select">@@include("_custom-select.html")</div>
+                    </div>
+                    <div class="news__items">
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                        @@include('_item-news.html', {"tag": "Активная жизнь с профсоюзом"})
+                    </div>
+                    @@include('_pagination.html')
+                </div>
+            </section>
+        </main>
+         <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

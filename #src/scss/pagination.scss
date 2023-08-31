@@ -1,0 +1,44 @@
+.page-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    .main-btn {
+        margin-left: 30px;
+    }
+    @media (max-width: $bp3) {
+        flex-direction: column;
+        .main-btn {
+            min-width: 220px;
+            margin: 20px 0 0;
+        }
+    }
+}
+.pagination {
+    display: flex;
+    align-items: center;
+	&__arr {
+        display: block;
+        flex: 0 0 32px;
+        padding: 8px;
+        svg {
+            width: 16px;
+            height: 16px;
+            fill: rgba($black,0.5);
+        }
+    }
+	&__link {
+        padding: 5px 12px;
+        color: rgba($black,0.5);
+    }
+	&__item {
+        padding: 0 8px;
+        color: rgba($black,0.5);
+        font-size: 26px;
+        letter-spacing: -0.05em;
+    }
+    .current {
+        color: $black;
+        background: $light-gray;
+        pointer-events: none;
+    }
+}

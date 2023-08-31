@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {
+"title": "Для поставщиков"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+        "class": "header"
+        })
+        <!--main-->
+        <main class="main">
+            <!--breadcrumbs-->
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li><a href="#" class="link">Главная</a></li>
+                        <li><a href="#" class="link">Закупки</a></li>
+                        <li class="active">Для поставщиков</li>
+                    </ul>
+                </div>
+            </div>
+            <!--supplier-->
+            <section class="supplier">
+                <div class="container">
+                    <h1 class="h2">Для поставщиков</h1>
+                    <div class="page-row">
+                        <!--page aside-->
+                        <aside class="page-nav mob-visible">
+                            <nav>
+                                <ul class="page-nav__list">
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Закупки</a></li>
+                                    <li class="page-nav__item active"><a href="#" class="page-nav__link active">Для поставщиков</a></li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <!--page-row__content-->
+                        <div class="page-row__content">
+                            @@loop("_link-purchase.html", [
+                              {"txt": "Руководство для поставщиков:"},
+                              {"txt": "Руководство для поставщиков:"},
+                              {"txt": "Руководство для поставщиков:"},
+                              {"txt": "Руководство для поставщиков:"},
+                              {"txt": "Руководство для поставщиков:"},
+                              ])
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

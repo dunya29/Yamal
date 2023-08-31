@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Производственная безопасность"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+            "class": "header"
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs-2.html', {   
+                "page": "Производственная безопасность"
+            })
+             <!--safety-->
+             <section class="safety">
+                <div class="container">
+                    <h1 class="h2">Производственная безопасность</h1>
+                    <div class="page-row">
+                        <!--page aside-->
+                        <aside class="page-nav">
+                            <nav>
+                                <ul class="page-nav__list">
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Вакансии</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Условия работы</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Корпоротиваня культура</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Люди ДТК Ямал</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Как мы работаем</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Мероприятия</a></li>
+                                    <li class="page-nav__item has-subnavs active">
+                                        <a href="#" class="page-nav__link">Охрана труда</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#" class="active">Производственная безопасность</a></li>
+                                                <li><a href="#">Дорожное движение</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Профсоюз</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Активная жизнь с профсоюзом</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <!--page-row__content-->
+                        <div class="page-row__content">
+                            @@include('_link-download.html', {"txt": "Специальная оценка охраны труда за 2022"})
+                            <div class="page-content">
+                                <h3>Заголовок</h3>
+                                <p>Часть управленческой системы организации. Цель создания СУОТ минимизация профессиональных рисков, возникающих в результате хозяйственной деятельности работодателя.часть управленческой системы организации. Цель создания СУОТ минимизация профессиональных рисков, возникающих в результате хозяйственной деятельности работодателя.</p>
+                                @@include("_item-quote.html", {
+                                    "p": "Часть управленческой системы организации. Цель создания СУОТ минимизация профессиональных рисков, возникающих в результате хозяйственной деятельности работодателя.часть управленческой системы организации. Цель создания СУОТ минимизация профессиональных рисков, возникающих в результате хозяйственной деятельности работодателя.",
+                                    "span": "Иванов Иван Иванович (директор по развитию)"
+                                })
+                                @@include("_safety-swiper.html")
+                            </div>
+                            <!--safety-events-->
+                            <div class="safety-events">
+                                <h3>Мероприятия</h3>
+                                <div class="safety-events__items">
+                                    @@include("_item-events.html")
+                                    @@include("_item-events.html")
+                                    @@include("_item-events.html")
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            @@include("_feedback-form.html", {
+                "h2": "Анонимное обращение",
+                "p": "Мы ценим каждого сотрудника, и всегда готовы выслушать"
+            })
+        </main>
+         <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

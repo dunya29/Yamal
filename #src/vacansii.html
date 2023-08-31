@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Вакансии"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+            "class": "header"
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs-2.html', {   
+                "page": "Вакансии"
+            })
+            <!--vacancies-->
+            <section class="vacancies">
+                <div class="container">
+                    <h1 class="h2">Вакансии</h1>
+                    <div class="page-row">
+                        <!--page aside-->
+                        <aside class="page-nav">
+                            <nav>
+                                <ul class="page-nav__list">
+                                    <li class="page-nav__item active"><a href="#" class="page-nav__link active">Вакансии</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Условия работы</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Корпоротиваня культура</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Люди ДТК Ямал</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Как мы работаем</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Мероприятия</a></li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Охрана труда</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Производственная безопасность</a></li>
+                                                <li><a href="#">Дорожное движение</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Профсоюз</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Активная жизнь с профсоюзом</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <!--page-row__content-->
+                        <div class="page-row__content">
+                            <!--page-action-->
+                            <div class="page-action">
+                                <a href="#" class="page-action__link active">Все</a>
+                                @@include('_custom-select.html')
+                                <div class="select-custom" aria-expanded="false">
+                                    <div class="select-custom__selected"><span>Тип занятости</span></div>
+                                    <ul class="select-custom__options">
+                                      <li class="select-custom__option selected"><a href="#">Все</a></li>
+                                      <li class="select-custom__option"><a href="#" >Тип занятости-1</a></li>
+                                      <li class="select-custom__option"><a href="#" >Тип занятости-2</a></li>
+                                      <li class="select-custom__option"><a href="#" >Тип занятости-3</a></li>
+                                    </ul>
+                                </div>
+                                <div class="select-custom" aria-expanded="false">
+                                    <div class="select-custom__selected"><span>Специальность</span></div>
+                                    <ul class="select-custom__options">
+                                      <li class="select-custom__option selected"><a href="#">Все</a></li>
+                                      <li class="select-custom__option"><a href="#" >Специальность-1</a></li>
+                                      <li class="select-custom__option"><a href="#" >Специальность-2</a></li>
+                                      <li class="select-custom__option"><a href="#" >Специальность-3</a></li>
+                                    </ul>
+                                </div>
+                                <div class="select-custom" aria-expanded="false">
+                                    <div class="select-custom__selected"><span>Категория</span></div>
+                                    <ul class="select-custom__options">
+                                      <li class="select-custom__option selected"><a href="#">Все</a></li>
+                                      <li class="select-custom__option"><a href="#" >Категория-1</a></li>
+                                      <li class="select-custom__option"><a href="#" >Категория-2</a></li>
+                                      <li class="select-custom__option"><a href="#" >Категория-3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="vacancies__items">
+                                @@include('_item-vac.html')
+                                @@include('_item-vac.html')
+                                @@include('_item-vac.html')
+                                @@include('_item-vac.html')
+                                @@include('_item-vac.html')
+                            </div>
+                            @@include('_pagination.html')
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+         <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+.footer {
+    border-top: 1px solid rgba(31, 3, 3, 0.30);
+    overflow: hidden;
+    .container {
+        padding-top: 26px;
+        padding-bottom: 38px;
+    }
+    .item-contact {
+        margin-bottom: 15px;
+        svg {
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+    &__top {
+        min-height: 150px;
+        max-width: 1168px;
+        display: grid;
+        grid-template-columns: 200px 1fr 288px;
+        grid-template-rows: 75px auto;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    &__logo {  
+        display: block;
+        padding-top: 21px;    
+        svg {
+            width: 100%;
+        }
+    }
+    &__copy {
+        font-size: 14px;
+        opacity: 0.5;
+    }
+    &__menu {
+        grid-area: 1/2/3/3;
+        padding: 25px 8px 0 0;
+        border-right: 1px solid $gray;
+        ul {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          li {
+            padding: 16px 17.5px;
+            letter-spacing: 0.03em;
+            a {
+                font-weight: 500;
+                color: $black;
+            }
+          }
+        }
+    }
+    &__contact {
+        grid-area: 1/3/3/4;
+        align-self: center;
+    }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+    &__privacy {
+        color: $black;
+        opacity: 0.5;
+        margin-right: 16px
+    }
+    &__dev {
+        display: flex;
+        align-items: center;
+        color: $gray;
+        span {
+            color: $gray;
+            margin-right: 5px
+        }
+        svg {
+            width: 59px;
+            height: 19px;
+            fill: $gray;
+        }
+    }
+    @media (min-width: $bp2) and (max-width: $bp1) {
+        &__menu {
+            max-width: 396px;
+            margin: 0 auto;
+            ul li {
+                flex: 0 0 33.33%;
+            }
+        }
+    }
+    @media (max-width: $bp1) {
+        .container {
+           padding-top: 20px;
+        }
+        &__top {
+            grid-template-columns: 155px 1fr 288px;
+            gap: 25px 20px;
+            margin-bottom: 10px;
+        }
+        &__menu {
+            padding: 10px 0 0;
+            border-right: 0;
+            ul li {
+                padding: 16px;
+            }
+        }
+        &__contact {
+            padding-top: 25px;
+            align-self: start;
+        }
+        &__privacy {
+            margin-right: 40px;
+        }
+    }
+    @media (max-width: $bp2) {
+        border-top: 0;
+        .container {
+            position: relative;
+            padding-top: 24px;
+           &::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            width: calc((100% - 40px));
+            height: 1px;
+            top: 0;
+            background: rgba(31, 3, 3, 0.30);
+           }
+        }
+        &__top {
+            display: block;
+        }
+        &__logo {
+            width: 155px;
+            height: 49px;
+            padding-top: 0;
+        }
+        &__menu {
+            margin: 0 -17px;
+            padding-top: 14px;
+            ul {
+                justify-content: flex-start;
+            }
+            ul li {
+                padding: 17px;
+            }
+        }
+        &__contact {
+            padding-top: 17px;
+            display: flex;
+            margin-bottom: 25px;
+            .item-contact {
+                margin-right: 15px;
+            }
+        }
+        &__bottom {
+            justify-content: space-between;
+        }
+    }
+    @media (max-width: $bp3) {
+        &__top {
+            margin-bottom: 15px;
+        }
+        &__contact {
+            display: block;
+            padding-top: 20px;
+            margin-bottom: 40px;
+            .item-contact {
+                font-size: 20px;
+                margin-right: 0;
+            }
+        }
+        &__bottom {
+            display: block;
+        }
+        &__dev {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    }
+    @media (max-width: 370px) {
+        .container:before {
+            left: 10px;
+            width: calc(100% - 20px);
+        }
+    }
+}

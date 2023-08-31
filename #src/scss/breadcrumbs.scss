@@ -1,0 +1,45 @@
+.breadcrumbs {
+    padding-top: 12px;
+    margin-bottom: 60px;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        li {
+            color: rgba($black, 0.5);
+            margin: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            &:before {
+                content: "";
+                display: block;
+                flex: 0 0 6px;
+                width: 6px;
+                height: 6px;
+                background: rgba($red, 0.5);
+                margin-right: 8px;
+            }
+            &.active {
+                color: $black;
+                &:before {
+                    background: $red;
+                }
+            }
+            &:first-child:before {
+                display: none;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            a {          
+                color: inherit;
+            }
+        }
+    }
+    @media (max-width: $bp2) {
+        margin-bottom: 40px;
+    }
+    @media (max-width: $bp3) {
+        padding-top: 0;
+    }
+}

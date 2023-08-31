@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {
+"title": "Проекты"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+        "class": "header"
+        })
+        <!--main-->
+        <main class="main">
+            <!--breadcrumbs-->
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li><a href="#" class="link">Главная</a></li>
+                        <li><a href="#" class="link">Услуги</a></li>
+                        <li class="active">Проекты</li>
+                    </ul>
+                </div>
+            </div>
+            <section class="projects">
+                <div class="container">
+                    <h1 class="h2">проекты</h1>
+                    <div class="page-action">
+                        @@include('_custom-select.html')
+                        @@include('_custom-select-2.html')
+                    </div>
+                    <div class="projects__items">
+                        @@include('_item-project.html')
+                        @@include('_item-project.html')
+                        @@include('_item-project.html')
+                        @@include('_item-project.html')
+                    </div>
+                    @@include('_pagination.html')
+                </div>
+            </section>
+            @@include("_feedback-form.html", {
+                "h2": "Получить консультацию",
+                "p": "Оставьте запрос и мы свяжемся с вами в ближайшее время"
+            })
+        </main>
+        <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

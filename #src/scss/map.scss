@@ -1,0 +1,101 @@
+.main-map {
+    h2 {
+        margin-bottom: 30px;
+    }
+    .swiper {
+        width: 100%;
+        border-bottom: 1px solid $black;
+        margin-bottom: 24px;
+    }
+    .swiper-wrapper {
+        margin-bottom: -16px;
+        transition-timing-function: ease-in-out;
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+    }
+    &__action {
+        flex: 0 0 269px;
+        min-width: 0;
+        margin: 60px 60px 0px 0;
+    }
+    &__item {
+        margin-bottom: 32px;
+        display: flex;
+        align-items: center;
+        .btn {
+            min-width: 140px;
+            margin-right: 20px
+        }
+    }
+    &__map {
+        order: 1;
+        svg {
+            height: 504px;
+        }
+    }
+    @media (max-width: $bp1) {
+        &__action {
+            margin-top: 50px;
+        }
+        &__map svg {
+            height: 351px;
+        }
+    }
+    @media (max-width: $bp2) {
+        .swiper {
+            border-bottom: 0;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: space-between;
+        }
+        .text-l {
+            font-size: 32px;
+        }
+        &__inner {
+            display: block;
+        }
+        &__action {
+            margin: 48px 0 0;
+        }
+        &__map {
+            svg {
+                width: 100%;
+            }
+        }
+    }
+    @media (max-width: $bp3) {
+        h2 {
+            max-width: 330px;
+        }
+        .swiper {
+            margin-bottom: 20px;
+        }
+        .swiper-wrapper {
+            margin-bottom: 0;
+        }
+        .swiper-slide {
+            display: block;
+        }
+        &__map svg {
+            height: auto;
+        }
+        &__action {
+            margin-top: 36px;
+        }
+        &__item {
+            margin-bottom: 20px;
+        }
+    }
+}
+.item-map {
+    fill: $white;
+    transition: all .3s linear;
+    cursor: pointer;
+    &.active {
+        fill: $red;
+        pointer-events: none;
+    }
+}

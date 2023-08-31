@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html', { "title": "Транспорт" })
+
+  <body>
+    @@include("_svg.html")
+    <div class="wrap">
+      <!--header-->
+      @@include('_header.html', { "class": "header" })
+      <!--main-->
+      <main class="main">
+        <!--breadcrumbs-->
+        <div class="breadcrumbs">
+          <div class="container">
+            <ul>
+              <li><a href="#" class="link">Главная</a></li>
+              <li><a href="#" class="link">Услуги</a></li>
+              <li>Транспорт</li>
+            </ul>
+          </div>
+        </div>
+        <!--transport-->
+        <section class="transport">
+          <div class="container">
+            <h1 class="h2">Транспорт</h1>
+            <div class="page-row">
+                <div class="page-action">
+                    <div class="select-custom" aria-expanded="false">
+                        <div class="select-custom__selected"><span>Регион</span></div>
+                        <ul class="select-custom__options">
+                            <li class="select-custom__option selected"><a href="#">Все</a></li>
+                            <li class="select-custom__option"><a href="#">Усинск</a></li>
+                            <li class="select-custom__option"><a href="#">Ямал</a></li>
+                            <li class="select-custom__option"><a href="#">Норильск</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-nav page-nav--select">
+                    <nav>
+                        <ul class="page-nav__list">
+                            <li class="page-nav__item">
+                                <a href="qruzovie-perevozki.html" class="page-nav__link">Грузовые автоперевозки</a>
+                                <div class="page-nav__subnavs">
+                                    <ul>
+                                        <li><a href="">Автобусы, автобусы специальные&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Автогрейдеры&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Автокраны&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Автоцистерны&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Бортовой&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Бульдозеры&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Прочая ДСТ&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Прочая тракторная&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Прочие специальные&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Ремонтные мастерские&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Самосвалы&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Седельные тягачи&nbsp;<span>(12)</span></a></li>
+                                        <li><a href="">Транспортные трактора колесные&nbsp;<span>(12)</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="page-nav__item">
+                                <a href="sdacha-v-arendu.html" class="page-nav__link">Сдача техники в аренду</a>
+                                <div class="page-nav__subnavs">
+                                    <ul>
+                                        <li><a href="">Автобусы, автобусы специальные</a></li>
+                                        <li><a href="">Автогрейдеры</a></li>
+                                        <li><a href="">Автокраны</a></li>
+                                        <li><a href="">Автоцистерны</a></li>
+                                        <li><a href="">Бортовой</a></li>
+                                        <li><a href="">Бульдозеры</a></li>
+                                        <li><a href="">Прочая ДСТ</a></li>
+                                        <li><a href="">Прочая тракторная</a></li>
+                                        <li><a href="">Прочие специальные</a></li>
+                                        <li><a href="">Ремонтные мастерские</a></li>
+                                        <li><a href="">Самосвалы</a></li>
+                                        <li><a href="">Седельные тягачи</a></li>
+                                        <li><a href="">Транспортные трактора колесные</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="page-row__content">
+                    <div class="transport__items">
+                        <h3>Автоцистерны</h3>
+                        @@include("_item-transport.html")
+                        @@include("_item-transport.html")
+                        @@include("_item-transport.html")
+                        @@include("_item-transport.html")
+                        @@include("_item-transport.html")
+                        @@include("_item-transport.html")
+                    </div>
+                    @@include('_pagination.html')
+                </div>
+            </div>
+          </div>
+        </section>
+        @@include("_feedback-form.html", { "h2": "Не нашли нужную технику? ", "p": "Оставьте запрос и мы свяжемся с вами в ближайшее время" })
+      </main>
+      <!--footer-->
+      @@include('_footer.html') 
+      @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+  </body>
+</html>

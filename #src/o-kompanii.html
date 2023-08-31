@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html', { "title": "О компании" })
+
+  <body>
+    @@include("_svg.html")
+    <div class="wrap">
+      <!--header-->
+      @@include('_header.html', { "class": "header" })
+      <!--main-->
+      <main class="main">
+        @@include('_breadcrumbs.html', { "page": "О компании" })
+        <!--about-->
+        <section class="about">
+          <div class="container">
+            <h1 class="h2">О компании</h1>
+            <!--page-content-->
+            <div class="page-content">
+              <div class="about__top">
+                <h2>Общество с ограниченной ответственностью<br>«Дорожно-Транспортная Компания Ямал»</h2>
+                <h4>Мы - генеральный подрядчик с широким кругом компетенций в области дорожного и промышленного строительства.</h4>
+              </div>
+              <img src="img/about-intro.jpg" alt="ДТК Ямал" />
+              <div class="info-about">
+                <div class="info-about__content">
+                  <p>
+                    Мы имеем обширную географию работ и сегодня мы уверенно работаем в интересах наших заказчиков и партнеров в Республике Коми, Ямало-Ненецком автономном округе и в Красноярском крае. Но мы на этом не останавливаемся, мы продолжаем активно расширять географию работ и расти. ООО
+                    "Дорожно-транспортная компания Ямал" является дочерней компанией АО "Спецнефтетранс".
+                  </p>
+                </div>
+                <div class="info-about__logo"><svg><use xlink:href="img/icons/sprite.svg#logo"></use></svg></div>
+                <div class="info-about__content">
+                  <p>Первоначально предприятие делало акцент в своей деятельности на строительстве и содержании промысловых дорог (автозимников), но по мере накопления опыта и профессионализма, усложнялись и объекты строительства.</p>                
+                </div>
+                <div class="info-about__block">
+                  <span class="h3">Организация работает в строительной сфере более 11 лет.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--about-stats-->
+        <section class="about-stats">
+          <div class="container">
+            <h3>Фактическое исполнение обязательств перед Заказчиками только за 2022 год составляет:</h3>
+            <div class="stat-items">
+              @@loop('_item-stat.html', [ {"span": "2,5 млн м<sup>3</sup>", "p": "Объем земляных работ"}, {"span": "3,5 тыс. м", "p": "Объем работ по бурению"}, {"span": "1,25 тыс. км", "p": "Объем строительствадорог и автозимников"}, {"span": "50 км", "p": "Дорог построено"}, ])
+            </div>
+          </div>
+        </section>
+        <!--about-grid-->
+        <div class="section about-grid">
+          <div class="container">
+            <div class="about-grid__left">
+              <div class="media-cover">
+                <img src="img/about-1.jpg" alt="" />
+              </div>
+              <div class="media-cover">
+                <img src="img/about-2.jpg" alt="" />
+              </div>
+              <div class="about-grid__content">
+                <p>Сегодня в нашей команде более 1800 профессионалов, из них более 370 квалифицированных инженерно-технических специалистов.</p>
+                <p>
+                  За год мы выросли в три раза, но продолжаем активно приглашать к себе профессионалов в связи с регулярным ростом портфеля заказов и расширением области деятельности Компании. Поэтому мы всегда рады профессиональным, трудолюбивым, честным, командным и ответственным работникам.
+                </p>
+              </div>
+               @@include("_item-quote.html", { "p": "Решение с каждым новым проектом более масштабных, сложных, интересных и амбициозных задач ", "span": "Наш девиз" })   
+            </div>
+            <div class="about-grid__right">
+              <div class="media-cover">
+                <img src="img/about-3.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--about-struc-->
+        <section class="about-struc">
+          <div class="container">
+            <h2>Структура видов деятельности</h2>
+            <div class="media-cover about-struc__item">
+              <picture>
+                <source srcset="img/about-struc-1.webp" media="(min-width: 992.98px)" type="image/webp">
+                <source srcset="img/about-struc-1.jpg" media="(min-width: 992.98px)">
+                <source srcset="img/about-struc-1-tab.webp" media="(min-width: 767.98px)" type="image/webp">
+                <source srcset="img/about-struc-1-tab.jpg" media="(min-width: 767.98px)">
+                <source srcset="img/about-struc-1-mob.webp" type="image/webp" />
+                <source srcset="img/about-struc-1-mob.img" />
+                <img src="img/about-struc-1.jpg" alt="Капитальное строительство объектов нефтегазовой инфраструктуры" />
+              </picture>
+              <span class="text-l">1</span>
+              <h3>Капитальное строительство объектов нефтегазовой инфраструктуры (трубопроводы, монтаж технологического оборудования и ЛЭП)</h3>
+            </div>
+            <div class="media-cover about-struc__item">
+              <picture>
+                <source srcset="img/about-struc-2.webp" media="(min-width: 992.98px)" type="image/webp">
+                <source srcset="img/about-struc-2.jpg" media="(min-width: 992.98px)">
+                <source srcset="img/about-struc-2-tab.webp" media="(min-width: 767.98px)" type="image/webp">
+                <source srcset="img/about-struc-2-tab.jpg" media="(min-width: 767.98px)">
+                <source srcset="img/about-struc-2-mob.webp" type="image/webp" />
+                <source srcset="img/about-struc-2-mob.img" />
+                <img src="img/about-struc-2.jpg" alt="Капитальное строительство автомобильных дорог" />
+              </picture>
+              <span class="text-l">2</span>
+              <h3>Капитальное строительство автомобильных дорог</h3>
+            </div>
+            <div class="media-cover about-struc__item">
+              <picture>
+                <source srcset="img/about-struc-3.webp" media="(min-width: 992.98px)" type="image/webp">
+                <source srcset="img/about-struc-3.jpg" media="(min-width: 992.98px)">
+                <source srcset="img/about-struc-3-tab.webp" media="(min-width: 767.98px)" type="image/webp">
+                <source srcset="img/about-struc-3-tab.jpg" media="(min-width: 767.98px)">
+                <source srcset="img/about-struc-3-mob.webp" type="image/webp" />
+                <source srcset="img/about-struc-3-mob.img" />
+                <img src="img/about-struc-3.jpg" alt="Капитальное строительство гидротехнических сооружений" />
+              </picture>
+              <span class="text-l">3</span>
+              <h3>Капитальное строительство гидротехнических сооружений (хвостохранилища, резервуары-накопители)</h3>
+            </div>
+            <div class="media-cover about-struc__item">
+              <picture>
+                <source srcset="img/about-struc-4.webp" media="(min-width: 992.98px)" type="image/webp">
+                <source srcset="img/about-struc-4.jpg" media="(min-width: 992.98px)">
+                <source srcset="img/about-struc-4-tab.webp" media="(min-width: 767.98px)" type="image/webp">
+                <source srcset="img/about-struc-4-tab.jpg" media="(min-width: 767.98px)">
+                <source srcset="img/about-struc-4-mob.webp" type="image/webp" />
+                <source srcset="img/about-struc-4-mob.img" />
+                <img src="img/about-struc-4.jpg" alt="Содержание автомобильных дорог" />
+              </picture>
+              <span class="text-l">4</span>
+              <h3>Содержание автомобильных дорог</h3>
+            </div>
+            <div class="media-cover about-struc__item">
+              <picture>
+                <source srcset="img/about-struc-5.webp" media="(min-width: 992.98px)" type="image/webp">
+                <source srcset="img/about-struc-5.jpg" media="(min-width: 992.98px)">
+                <source srcset="img/about-struc-5-tab.webp" media="(min-width: 767.98px)" type="image/webp">
+                <source srcset="img/about-struc-5-tab.jpg" media="(min-width: 767.98px)">
+                <source srcset="img/about-struc-5-mob.webp" type="image/webp" />
+                <source srcset="img/about-struc-5-mob.img" />
+                <img src="img/about-struc-5.jpg" alt="Строительство и содержание автозимников" />
+              </picture>
+              <span class="text-l">5</span>
+              <h3>Строительство и содержание автозимников</h3>
+            </div>
+          </div>
+        </section>
+        <!--about-exp-->
+        <section class="about-exp">
+          <div class="container">
+            <h2>Опыт выполнения работ по строительству, текущему ремонту и содержанию автозимников и промысловых дорог</h2>
+            <div class="about-exp__items">
+              <div class="about-exp__item">
+                <span>1750 км</span>
+                <p>Объекты ООО «ЛУКОЙЛ-Коми» строительство и содержание</p>
+              </div>
+              <div class="about-exp__item">
+                <span>475 км</span>
+                <p>Объекты ООО «ЛУКОЙЛ-Западная Сибирь» строительство и содержание</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--about-tech-->
+        <section class="about-tech">
+          <div class="container">
+            <h2>Техника</h2>
+            <h4>608 единиц подвижного состава, в том числе:</h4>
+            <div class="stat-items">
+              <div class="item-stat">
+                <span class="text-l">247</span>
+                <p>Единиц дорожно-строительных механизмов</p>
+              </div>
+              <div class="item-stat">
+                <span class="text-l">3</span>
+                <p>Прицепов, полуприцепов</p>
+              </div>
+              <div class="item-stat">
+                <span class="text-l">167</span>
+                <p>Автомобили и спецтехника</p>
+              </div>
+              <div class="item-stat">
+                <span class="text-l">30</span>
+                <p>Автобусов</p>
+              </div>
+              <div class="item-stat">
+                <span class="text-l">134</span>
+                <p>Грузового автотранспорта</p>
+              </div>
+              <div class="item-stat">
+                <span class="text-l">27</span>
+                <p>Легковых</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--about-map-->
+        <section class="about-map">
+          <div class="container">
+            <h2>География работы</h2>
+            <img src="img/about-map.svg" alt="География работы" />
+            <div class="about-map__content">
+              <h4>Мокулаевское месторождение (Норильск)</h4>
+              <h4>Лебяжье хвостохранилище /Р-ССХ-3/ (Норильск)</h4>
+              <h4>Рудник «Заполярный» /РЗ-КОМ/ (Норильск)</h4>
+              <h4>Объекты нефтегазовой промышленности Республики Коми и НАО</h4>
+              <h4>Объекты нефтегазовой промышленности ЯНАО</h4>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!--footer-->
+      @@include('_footer.html') @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+  </body>
+</html>

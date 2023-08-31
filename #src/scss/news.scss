@@ -1,0 +1,217 @@
+.news {
+    .page-action {
+        margin-bottom: 20px;
+    }
+    .page-action__link:nth-child(2),
+    .page-action__link:nth-child(3),
+    .page-action__link:nth-child(4) {
+       flex-grow: 1;
+       max-width: 309px;
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 40px 20px;
+    }
+    @media (max-width: $bp1) {
+        &__items {
+            gap: 40px 15px;
+        }
+        .news__select {
+            order: -1;
+            flex: 0 0 100%;
+        }
+    }
+    @media (max-width: $bp2) {
+        .page-action__link {
+            flex: 0 0 calc(50% - 20px);
+            max-width: none !important;
+        }
+        &__items {
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+        }
+    }
+    @media (max-width: $bp3) {
+        .news__select {
+            width: 100%;
+        }
+        &__items {
+           gap: 20px 10px;
+        }
+    }
+    @media (max-width: $bp5) {
+        &__items {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+.item-news {
+    display: block;
+    line-height: 1.2;
+    color: $black;
+    background: $white;
+    padding-bottom: 16px;
+    border-radius: 6px;
+    transition: background .3s linear;
+    p {
+        font-size: 14px;
+        line-height: 1.2;
+        opacity: 0.5;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+    h5 {
+        flex-grow: 1;
+        margin-bottom: 13px;
+        a {
+            color: inherit;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+    }
+    &:hover {       
+        background: $black;
+        color: $white;
+        .item-news__inner {
+            transform: scale(0.95, 0.96);
+        }
+        .item-news__tag {
+            border-color: $white;
+        }
+    }
+    .media-cover {
+        padding-top: 74.13%;     
+        border-radius: 4px;
+    }
+    &__inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: transform .3s linear;
+        will-change: transform;
+    }
+    &__preview {
+        position: relative;
+        margin-bottom: 12px;
+    }
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &__city {
+        font-size: 12px;
+        color: $white;
+        background: $black;
+        display: inline-block;
+        padding: 8px 10px;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: 2;
+        border-radius: 4px;
+    }
+    &__date {
+        font-size: 14px;
+        opacity: 0.5;
+        margin-bottom: 13px;
+    }
+    &__tag {
+        font-size: 12px;
+        line-height: 1;
+        color: inherit;
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 4px;
+        border: 1px solid $gray;
+        margin-bottom: 13px;
+    }
+    @media (max-width: $bp1) {
+        .media-cover {
+            padding-top: 75%;
+        }
+    }
+    @media (max-width: $bp3) {
+        &__preview {
+            margin-bottom: 22px;
+        }
+    }
+}
+.article {
+    .page-content {
+        max-width: 860px;
+        margin-bottom: 60px;
+    }
+    &__date {
+        color: rgba(#000000, 0.5);
+        margin-bottom: 40px;
+    }
+    @media (max-width: $bp2) {
+        .page-content {
+            margin-bottom: 50px;
+        }
+        &__date {
+            margin-bottom: 20px;
+        }
+        &__date + h3 {
+            margin-top: 20px;
+        }
+    }
+    @media (max-width: $bp3) {
+        p {
+            font-size: 14px;
+            line-height: 1.2;
+        }
+    }
+}
+.article-table {
+    &__cols {
+        overflow-x: auto;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+           display: none;
+        }
+    }
+    &__col {       
+        display: flex;
+        &:last-child span{
+            border-bottom: 1px solid $gray;
+        }
+        &:nth-child(2n + 1) span {
+            background: $light-gray;
+        }
+        &:first-child span{
+            color: $white;
+            background: $black;
+        }
+        span {
+            flex: 0 0 216px;
+            padding: 10px;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: break-word;
+            border-left: 1px solid $gray;
+            border-right: 1px solid $gray;
+            &:nth-child(2n) {
+                margin: 0 -1px;
+            }
+        }
+    }
+    @media (max-width: $bp1) {
+        &__col {
+            span {
+                flex: 0 0 200px;
+            }
+        }
+    }
+}
+
+

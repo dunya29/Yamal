@@ -1,0 +1,53 @@
+.form-block {
+    max-width: 790px;
+    margin-left: auto;
+    margin-right: auto;
+    h2 {
+        text-transform: none;
+        margin-bottom: 30px;
+    }
+    .container {
+        display: flex;
+        align-items: center;       
+    }
+    .form__item {
+      margin-bottom: 12px;
+    }
+    input,
+    textarea {
+      background: rgba(31, 3, 3, 0.10);
+      border-color: transparent;
+    }
+    .form {
+        flex: 1 1 auto;
+        padding: 10px 0 10px 30px;
+        margin-left: 30px;
+        border-left: 1px solid $red;
+    }
+    &__content {
+      flex: 0 0 269px;
+    }
+    @media (max-width: $bp1) {
+      h2 {
+        line-height: 1.2;
+      }
+    }
+    @media (max-width: $bp2) {
+      &__content {
+        flex: 0 0 248px;
+      }
+    }
+    @media (max-width: $bp3) {
+      h2 {
+        margin-bottom: 20px;
+      }
+      .container {
+        display: block;
+      }
+      .form {
+        padding: 0;
+        margin: 20px 0 0;
+        border-left: 0;
+      }
+    }
+  }

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Как мы работаем"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+            "class": "header"
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs-2.html', {   
+                "page": "Как мы работаем"
+            })
+             <!--safety-->
+             <section class="work-page">
+                <div class="container">
+                    <h1 class="h2">Как мы работаем</h1>
+                    <div class="page-row">
+                        <!--page aside-->
+                        <aside class="page-nav">
+                            <nav>
+                                <ul class="page-nav__list">
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Вакансии</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Условия работы</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Корпоротиваня культура</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Люди ДТК Ямал</a></li>
+                                    <li class="page-nav__item active"><a href="#" class="page-nav__link active">Как мы работаем</a></li>
+                                    <li class="page-nav__item"><a href="#" class="page-nav__link">Мероприятия</a></li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Охрана труда</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Производственная безопасность</a></li>
+                                                <li><a href="#">Дорожное движение</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="page-nav__item has-subnavs">
+                                        <a href="#" class="page-nav__link">Профсоюз</a>
+                                        <div class="page-nav__subnavs">
+                                            <ul>
+                                                <li><a href="#">Активная жизнь с профсоюзом</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <!--page-row__content-->
+                        <div class="page-row__content">
+                            <div class="page-content">
+                                <p>Текущие решения мы принимаем коллегиально и взвешенно, рассматриваем все варианты.</p>
+                                <p>Решения принимаются взвешенно, с учетом долгосрочной перспективы, пусть даже в ущерб краткосрочным финансовым планам.</p>
+                                <p>Реализацию решений мы стремимся осуществлять без промедлений.</p>
+                                @@include("_safety-swiper.html")
+                                <h4>Мы ставим себе высокие цели в соответствии с нашей миссией, стратегией и системой ценностей</h4>
+                                <ul>
+                                    <li>Капитальное строительство автомобильных дорог;</li>
+                                    <li>Капитальное строительство объектов инфраструктуры разрабатываемых месторождений (трубопроводы, монтаж технологического оборудования и ЛЭП);</li>
+                                    <li>Капитальное строительство гидротехнических сооружений (хвостохранилища, резервуары-накопители, дамбы, водоотводные каналы);</li>
+                                </ul>
+                            </div>
+                            <div class="video-reviews">
+                                <h3>Видео отзывы сотрудников</h3>
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a href="#" class="video media-cover">
+                                                <img src="img/video-review.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="video media-cover">
+                                                <img src="img/video-review.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="video media-cover">
+                                                <img src="img/video-review.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="video media-cover">
+                                                <img src="img/video-review.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="video media-cover">
+                                                <img src="img/video-review.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="video media-cover">
+                                                <img src="img/video-review.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="video media-cover">
+                                                <img src="img/video-review.jpg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-nav">
+                                        <button class="btn swiper-btn swiper-btn--prev">
+                                            <svg><use xlink:href="img/icons/sprite.svg#chevron-left"></use></svg>
+                                        </button>
+                                        <div class="swiper-pagination"></div>
+                                        <button class="btn swiper-btn swiper-btn--next">
+                                            <svg><use xlink:href="img/icons/sprite.svg#chevron-right"></use></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-reviews">
+                                <h3>О нас пишут на HeadHunter</h3>
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            @@include("_item-review.html", { "txt": "Компания обеспечивает официальное трудоустройство. Платит белую заработную плату без задержек 2 раза в месяц. Есть корпоративные и спортивные мероприятия для сотрудников и их детей, премии и подарки. Коллеги профессионалы, руководство достаточно лояльное. Крупная стабильная дорожно-строительная компания, серьезные заказчики, которые доверяют свои проекты. В нынешнее время мало компаний, которые платят всю сумму зп на карту. Есть выплаты при различных жизненных ситуациях для сотрудников и их родственников. Офис в центре, добираться удобно."})
+                                        </div>
+                                        <div class="swiper-slide">
+                                            @@include("_item-review.html", { "txt": "Платит белую заработную плату без задержек 2 раза в месяц. Есть корпоративные и спортивные мероприятия для сотрудников и их детей, премии и подарки. Коллеги профессионалы, руководство достаточно лояльное. Крупная стабильная дорожно-строительная компания, серьезные заказчики, которые доверяют свои проекты. В нынешнее время мало компаний, которые платят всю сумму зп на карту."})
+                                        </div>
+                                        <div class="swiper-slide">
+                                            @@include("_item-review.html", { "txt": "Компания обеспечивает официальное трудоустройство. Платит белую заработную плату без задержек 2 раза в месяц. Есть корпоративные и спортивные мероприятия для сотрудников и их детей, премии и подарки. Коллеги профессионалы, руководство достаточно лояльное. Крупная стабильная дорожно-строительная компания, серьезные заказчики, которые доверяют свои проекты. В нынешнее время мало компаний, которые платят всю сумму зп на карту. Есть выплаты при различных жизненных ситуациях для сотрудников и их родственников. Офис в центре, добираться удобно."})
+                                        </div>
+                                        <div class="swiper-slide">
+                                            @@include("_item-review.html", { "txt": "Платит белую заработную плату без задержек 2 раза в месяц. Есть корпоративные и спортивные мероприятия для сотрудников и их детей, премии и подарки. Коллеги профессионалы, руководство достаточно лояльное. Крупная стабильная дорожно-строительная компания, серьезные заказчики, которые доверяют свои проекты. В нынешнее время мало компаний, которые платят всю сумму зп на карту."})
+                                        </div>
+                                        <div class="swiper-slide">
+                                            @@include("_item-review.html", { "txt": "Компания обеспечивает официальное трудоустройство. Платит белую заработную плату без задержек 2 раза в месяц. Есть корпоративные и спортивные мероприятия для сотрудников и их детей, премии и подарки. Коллеги профессионалы, руководство достаточно лояльное. Крупная стабильная дорожно-строительная компания, серьезные заказчики, которые доверяют свои проекты. В нынешнее время мало компаний, которые платят всю сумму зп на карту. Есть выплаты при различных жизненных ситуациях для сотрудников и их родственников. Офис в центре, добираться удобно."})
+                                        </div>
+                                    </div>
+                                    <div class="swiper-nav">
+                                        <button class="btn swiper-btn swiper-btn--prev">
+                                            <svg><use xlink:href="img/icons/sprite.svg#chevron-left"></use></svg>
+                                        </button>
+                                        <div class="swiper-pagination"></div>
+                                        <button class="btn swiper-btn swiper-btn--next">
+                                            <svg><use xlink:href="img/icons/sprite.svg#chevron-right"></use></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            @@include("_feedback-form.html", {
+                "h2": "Анонимное обращение",
+                "p": "Мы ценим каждого сотрудника, и всегда готовы выслушать"
+            })
+        </main>
+         <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

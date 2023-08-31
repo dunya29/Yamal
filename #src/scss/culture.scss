@@ -1,0 +1,67 @@
+.culture {
+    .page-content {
+        ul li {
+            margin-bottom: 16px;
+        }       
+        h4 {
+            font-weight: 500;
+            &.red {
+                color: $red;
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__principles {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px 15px;
+        span {
+            min-width: 310px;
+            font-size: 20px;
+            padding: 10px 8px;
+            border-bottom: 1px solid $red;
+            margin: 0 10px 25px;
+        }
+    }
+    &__block {
+        padding: 16px;
+        h4 {
+            margin-top: 0;
+        }
+        ul {
+            margin-bottom: 0;
+        }
+    }
+    &__block--yes {
+        background: url(../img/culture-yes.svg) top right no-repeat, $light-gray;
+        margin: 40px 0 20px;
+        ul li:before {
+            background: #15A546;
+        }
+    }
+    &__block--no {
+        background: url(../img/culture-no.svg) top right no-repeat, $light-gray;
+        ul li {
+            margin-bottom: 20px;
+        }
+    }
+    @media (max-width: $bp3) {
+        &__principles {
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 0 15px;
+            span {
+                font-size: 16px;
+                margin: 0 0 25px;
+            }
+        }
+        &__block {
+            background-size: 150px 150px; 
+        }    
+    }
+    @media (max-width: $bp5) {
+        &__principles span {
+            min-width: 100%;
+        }
+    }
+}

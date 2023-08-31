@@ -1,0 +1,107 @@
+.item-transport {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &__header {
+        padding: 16px;
+        background: $gray;
+        text-transform: uppercase;
+    }
+    &__items {
+        padding: 12px 16px;
+        background: $light-gray;
+        display: grid;
+        grid-template-columns: 1fr 2fr 4.4fr 1.5fr;
+        gap: 16px;
+    }
+    &__item {
+        padding-right: 6px;
+        border-right: 1px solid $gray;
+        &:last-child {
+            border-right: 0
+        }
+        span {
+            display: block;
+            &:first-child {
+                color: rgba(31, 3, 3, 0.50);
+                margin-bottom: 8px;
+            }
+        }
+    }
+    @media (max-width: $bp1) {
+        &__items {
+            grid-template-columns: 1fr 2fr 2.2fr 1.5fr;
+        }
+    }
+    @media (max-width: $bp2) {
+        &__items {
+            grid-template-columns: 1fr 2fr 2fr 1.5fr;
+        }
+    }
+    @media (min-width: 370px) and (max-width: $bp3) {
+        &__item {
+            &:nth-child(2n), &:nth-child(3) {
+                border-right: 0;
+            }
+            &:nth-child(4) {
+                grid-area: 2/1/3/2;
+                border-right: 1px solid $gray;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+    @media (max-width: $bp3) {
+        &__header {
+            padding: 16px 8px;
+            text-transform: none;
+        }
+        &__items {
+            padding: 12px 8px;
+            grid-template-columns: 1fr 2.15fr;
+            gap: 8px;
+        }
+        &__item {
+            span {
+                &:first-child {
+                    margin-bottom: 4px;
+                }
+            }
+        }
+    }
+    @media (max-width: 370px) {
+        &__items {
+            grid-template-columns: 1fr;
+        }
+        &__item {
+            border-right: 0!important;
+            border-bottom: 1px solid $gray;
+            padding-bottom: 6px;
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}
+.transport {
+    h3 {
+        margin-bottom: 20px;
+    }
+    .page-row {
+        display: grid;
+        grid-template-columns: calc(100% / 4 + 5px) 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    .page-nav {
+        grid-row: 1/3;
+    }
+    @media (max-width: $bp2) {
+        .page-row {
+            display: block;
+        }
+    }
+}

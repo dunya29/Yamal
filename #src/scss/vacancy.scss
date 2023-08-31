@@ -1,0 +1,60 @@
+.vacancy {
+    overflow: visible;
+    .page-content p {
+        font-size: 20px;
+        margin: 0;
+    }
+    #map{
+        height: 266px;
+        margin-bottom: 16px;
+    }
+    @media (max-width: $bp1) {
+        .page-sticky__btns {
+            margin: 0 -4px;
+            a {
+                margin: 0 4px 10px;
+            }
+        }
+        #map{
+            height: 226px;
+        }
+    }
+    @media (max-width: $bp5) {
+        .page-sticky__btns {
+            flex-direction: column;
+        }
+    }
+}
+.other-vac {
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 32px;
+        &:last-child {
+            margin: 0!important
+        }
+        h4 a {
+            color: $red;
+            text-decoration: underline;
+        }
+        span {
+            margin-left: 18px;
+        }
+    }
+    @media (max-width: $bp3) {
+        &__item {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            h4 {
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+            span {
+                margin: 0 0 8px;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html', { "title": "Услуги" })
+
+  <body>
+    @@include("_svg.html")
+    <div class="wrap">
+      <!--header-->
+      @@include('_header.html', { "class": "header" })
+      <!--main-->
+      <main class="main">
+        @@include('_breadcrumbs.html', { "page": "Услуги" })
+        <!--about-->
+        <section class="services">
+          <div class="container">
+            <h1 class="h2">Услуги</h1>
+            <div class="services__items">
+                @@loop("_item-service.html", [
+                {"h3": "Строительство автомобильных дорог","tags": '<span>Ямал</span><span>Норильск</span>', "nmb": "1"},
+                {"h3": "Промышленное строительство","tags": '<span>Усинск</span><span>Ямал</span>', "nmb": "2"},
+                {"h3": "Производство продукции<span>(щебень, асфальт)</span>Изготовление металлоконструкций","tags": '<span>Норильск</span>', "nmb": "3"},
+                {"h3": "Проектирование","tags": '<span>Вся Россия</span>', "nmb": "4"},
+                ])
+                <!--item-service-->
+                <div class="item-service">
+                  
+                  <div class="page-tags">
+                    <span>Вся Россия</span>
+                  </div>
+                  <div class="item-service__content">
+                      <h3>Транспорт</h3>
+                      <a href="transport.html" class="item-service__link"></a>
+                      <div class="item-service__links">        
+                        <span><a href="qruzovie-perevozki.html">Грузовые автоперевозки</a></span>
+                        <span><a href="sdacha-v-arendu.html">Сдача техники в аренду</a></span>
+                      </div>
+                  </div>
+                  <svg><use xlink:href="img/icons/sprite.svg#service-5"></use></svg>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--services-cap-->
+        <section class="services-cap">
+          <div class="container">
+            <h2>Наши возможности</h2>
+            <div class="media-cover item-cap">
+              <img src="img/services-cap1.jpg" alt="Производство асфальто-бетонных дорог">
+              <div class="item-cap__content">
+                <h3>Производство асфальто-бетонных дорог</h3>
+                <p>Текст о том, какие виды дорог вы можете проектировать/ строить</p>
+                <p>Какая техника в этом учавствует и тд Текст о том, какие виды дорог вы можете проектировать/ строить Какая техника в этом учавствует и тд </p>
+                <a href="#" class="btn main-btn modal-show-btn" data-modal="service-modal">Связаться</a>
+              </div>
+            </div>
+            <div class="media-cover item-cap">
+              <img src="img/services-cap2.jpg" alt="Высокотехнологичное оборудование">
+              <div class="item-cap__content">
+                <h3>Производство асфальто-бетонных дорог используя высокотехнологичное оборудование</h3>
+                <p>Первоначально предприятие делало акцент в своей деятельности на строительстве и содержании промысловых дорог (автозимников), но по мере накопления опыта и профессионализма усложнялись и объекты строительства.</p>
+                <p>Решение с каждым новым проектом более масштабных, сложных, интересных и амбициозных задач — это уже стало нашим девизом.</p>
+                <a href="#" class="btn main-btn modal-show-btn" data-modal="service-modal">Связаться</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        @@include("_feedback-form.html", {
+          "h2": "Получить консультацию",
+          "p": "Оставьте запрос и мы свяжемся с вами в ближайшее время"
+        })
+      </main>
+      <!--footer-->
+      @@include('_footer.html') @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+  </body>
+</html>

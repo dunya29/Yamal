@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Главная"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+            "class": "header"
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs.html', {   
+                "page": "Поиск"
+            })
+        </main>
+         <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!--form-block-->
+<section class="form-block">
+    <div class="container">
+        <div class="form-block__content">
+            <h2>@@h2</h2>
+            <p>@@p</p>
+        </div>
+        <form action="" class="form" onsubmit="event.preventDefault();formSuccess(this)">
+            <div class="form__items">
+                <div class="form__item">
+                    <input type="text" placeholder="Имя">
+                </div>
+                <div class="form__item">
+                    <input type="text" placeholder="Почта или телефон">
+                </div>
+                <div class="form__item">
+                    <textarea placeholder="Сообщение" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                </div>
+            </div>
+            <div class="form__footer">
+                <label class="item-checkbox">
+                    <input type="checkbox">
+                    <span>Я соглашаюсь на обработку моих персональных данных</span>
+                </label>
+                <button type="submit" class="btn main-btn">Связаться</button>
+            </div>           
+        </form>
+    </div>
+</section>

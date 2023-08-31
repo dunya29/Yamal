@@ -1,0 +1,176 @@
+<div class="overlay"></div>
+<!--feedback-modal-->
+<div class="modal" id="service-modal">
+    <div class="modal__overlay">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Закрыть всплывающее окно"></button>
+            <h3>Обратиться за услугой</h3>
+            <form action="" class="form" onsubmit="event.preventDefault();formSuccess(this)">
+                <div class="form__items">
+                    <div class="item-form">
+                        <div class="select-custom" data-select="Услуга" aria-expanded="false">
+                            <div class="select-custom__selected"><span>Услуга</span></div>
+                            <ul class="select-custom__options">
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="1"><span>Строительство автомобильных дорог</span></label></li>
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="2"><span>Промышленное строительство</span></label></li>
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="3"><span>Производство продукции (щебень, асфальт)Изготовление металлоконструкций</span></label></li>
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="4"><span>Транспорт</span></label></li>
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="5"><span>Проектирование</span></label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item-form">
+                        <input type="text" placeholder="Имя">
+                    </div>
+                    <div class="item-form">
+                        <input type="text" placeholder="Телефон или почта">
+                    </div>
+                    <div class="item-form">
+                        <textarea placeholder="Сообщение" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                    </div>
+                </div>
+                <div class="form__footer">
+                    <label class="item-checkbox">
+                        <input type="checkbox">
+                        <span>Я соглашаюсь на обработку моих персональных данных</span>
+                    </label>
+                    <button type="submit" class="btn main-btn">Оставить заявку</button>
+                </div>   
+            </form>
+        </div>
+    </div>
+</div>
+<!--succes-modal-->
+<div class="modal" id="success-modal">
+    <div class="modal__overlay">
+        <div class="modal__content">
+            <div class="modal__left">
+                <div class="modal__img">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 43" fill="none">
+                        <path d="M19.7462 41.5899C18.9654 42.3691 17.7012 42.3691 16.9205 41.5899L1.41833 26.1177C0.635451 25.3363 0.635451 24.0679 1.41833 23.2865L5.00382 19.708C5.78456 18.9288 7.04878 18.9288 7.82951 19.708L16.9205 28.7814C17.7012 29.5606 18.9654 29.5606 19.7462 28.7814L47.1705 1.41011C47.9512 0.630886 49.2154 0.630887 49.9962 1.41011L53.5817 4.98867C54.3646 5.77003 54.3646 7.03847 53.5817 7.81984L19.7462 41.5899Z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal__right">
+               <h3>Заявка отправлена успешно</h3>
+               <p>Мы свяжемся с вами в ближайшее время</p>
+               <button class="btn modal__close">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--error-modal-->
+<div class="modal" id="error-modal">
+    <div class="modal__overlay">
+        <div class="modal__content">
+            <div class="modal__left">
+                <div class="modal__img"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 57" fill="none">
+                        <path d="M56.4798 45.7923L42.0159 31.3284C40.4538 29.7663 40.4538 27.2336 42.0159 25.6715L56.4798 11.2076C56.8112 10.8722 56.997 10.4197 56.997 9.94823C56.997 9.47677 56.8112 9.02429 56.4798 8.68889L48.311 0.520076C48.1459 0.354304 47.9496 0.22277 47.7335 0.13302C47.5174 0.0432703 47.2857 -0.00292969 47.0517 -0.00292969C46.8177 -0.00292969 46.586 0.0432703 46.3699 0.13302C46.1537 0.22277 45.9575 0.354304 45.7923 0.520076L31.3284 14.984C29.7663 16.5461 27.2336 16.5461 25.6715 14.984L11.2076 0.520076C10.8735 0.186143 10.4206 -0.00144976 9.94823 -0.00144976C9.47591 -0.00144976 9.02292 0.186143 8.68889 0.520076L0.520076 8.68889C0.354304 8.85405 0.22277 9.05031 0.13302 9.26642C0.0432703 9.48253 -0.00292969 9.71423 -0.00292969 9.94823C-0.00292969 10.1822 0.0432703 10.4139 0.13302 10.63C0.22277 10.8462 0.354304 11.0424 0.520076 11.2076L14.984 25.6715C16.5461 27.2336 16.5461 29.7663 14.984 31.3284L0.520076 45.7923C0.186143 46.1264 -0.00144976 46.5793 -0.00144976 47.0517C-0.00144976 47.524 0.186143 47.977 0.520076 48.311L8.68889 56.4798C8.85405 56.6456 9.05031 56.7771 9.26642 56.8669C9.48253 56.9566 9.71423 57.0028 9.94823 57.0028C10.1822 57.0028 10.4139 56.9566 10.63 56.8669C10.8462 56.7771 11.0424 56.6456 11.2076 56.4798L25.6715 42.0159C27.2336 40.4538 29.7663 40.4538 31.3284 42.0159L45.7923 56.4798C46.1264 56.8138 46.5793 57.0013 47.0517 57.0013C47.524 57.0013 47.977 56.8138 48.311 56.4798L56.4798 48.311C56.6456 48.1459 56.7771 47.9496 56.8669 47.7335C56.9566 47.5174 57.0028 47.2857 57.0028 47.0517C57.0028 46.8177 56.9566 46.586 56.8669 46.3699C56.7771 46.1537 56.6456 45.9575 56.4798 45.7923Z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal__right">
+               <h3>Ошибка</h3>
+               <p>Что-то пошло не так, попробуйте еще раз</p>
+               <button class="btn modal__close">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--purchase-modal-->
+<div class="modal" id="purchase-modal">
+    <div class="modal__overlay">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Закрыть всплывающее окно"></button>
+            <h3>Заявка на участие</h3>
+            <form action="" class="form" onsubmit="event.preventDefault();formSuccess(this)">
+                <div class="form__items">
+                    <div class="item-form">
+                        <input type="text" placeholder="Компания">
+                    </div>
+                    <div class="item-form">
+                        <input type="text" placeholder="Телефон или почта">
+                    </div>
+                    <div class="item-form">
+                        <textarea placeholder="Сообщение" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                    </div>
+                    <div class="item-form file-form">
+                        <label>
+                            <input type="file">
+                            <span>Прикрепить файл</span>
+                        </label>
+                        <div class="file-form__items"></div>
+                    </div>
+                </div>
+                <div class="form__footer">
+                    <label class="item-checkbox">
+                        <input type="checkbox">
+                        <span>Я соглашаюсь на обработку моих персональных данных</span>
+                    </label>
+                    <button type="submit" class="btn main-btn">Оставить заявку</button>
+                </div>   
+            </form>
+        </div>
+    </div>
+</div>
+<!--vacancy-modal-->
+<div class="modal" id="vac-modal">
+    <div class="modal__overlay">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Закрыть всплывающее окно"></button>
+            <h3>Отклик на вакансию</h3>
+            <form action="" class="form" onsubmit="event.preventDefault();formSuccess(this)">
+                <div class="form__items">
+                    <div class="item-form">
+                        <div class="select-custom" data-select="Локация" aria-expanded="false">
+                            <div class="select-custom__selected"><span>Локация</span></div>
+                            <ul class="select-custom__options">
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="1"><span>Локация 1</span></label></li>
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="2"><span>Локация 2</span></label></li>
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="3"><span>Локация 3</span></label></li>
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="4"><span>Локация 4</span></label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item-form">
+                        <div class="select-custom" data-select="Должность" aria-expanded="false">
+                            <div class="select-custom__selected"><span>Должность</span></div>
+                            <ul class="select-custom__options">
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="1"><span>Должность 1</span></label></li>
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="2"><span>Должность 2</span></label></li>
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="3"><span>Должность 3</span></label></li>
+                              <li class="select-custom__option"><label><input type="radio" name="service" value="4"><span>Должность 4</span></label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item-form file-form">
+                        <label>
+                            <input type="file">
+                            <span>Прикрепить резюме</span>
+                        </label>
+                        <div class="file-form__items"></div>
+                    </div>
+                    <div class="item-form">
+                        <label class="item-checkbox">
+                            <input type="checkbox" class="cv-btn">
+                            <span>У меня нет резюме</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="vac-extra form__extra"></div>
+                <div class="form__footer">
+                    <label class="item-checkbox">
+                        <input type="checkbox">
+                        <span>Готов к работе вахтовым методом</span>
+                    </label>
+                    <label class="item-checkbox">
+                        <input type="checkbox">
+                        <span>Я соглашаюсь на обработку моих персональных данных</span>
+                    </label>
+                    <button type="submit" class="btn main-btn">Оставить заявку</button>
+                </div>   
+            </form>
+        </div>
+    </div>
+</div>

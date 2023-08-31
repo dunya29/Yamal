@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('_head.html', {   
+    "title": "Карьера"
+})
+
+<body>
+    @@include("_svg.html")
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {
+            "class": "header"
+        })
+        <!--main-->  
+        <main class="main">
+            @@include('_breadcrumbs.html', {   
+                "page": "Карьера"
+            })
+            <section class="career">
+                <div class="container">
+                    <h1 class="h2">Карьера</h1>
+                    <div class="career__items">
+                        @@loop('_item-career.html',[
+                        {"text": "Вакансии", "svg": '<svg><use xlink:href="img/icons/sprite.svg#career-1"></use></svg>'},
+                        {"text": "Условия работы", "svg": '<svg><use xlink:href="img/icons/sprite.svg#career-2"></use></svg>'},
+                        {"text": "Корпоротивная культура", "svg": '<svg><use xlink:href="img/icons/sprite.svg#career-3"></use></svg>'},
+                        {"text": "Люди ДТК Ямал", "svg": '<svg><use xlink:href="img/icons/sprite.svg#career-4"></use></svg>'},
+                        {"text": "Как мы работаем", "svg": '<svg><use xlink:href="img/icons/sprite.svg#career-5"></use></svg>'},
+                        {"text": "Мероприятия", "svg": '<svg><use xlink:href="img/icons/sprite.svg#career-6"></use></svg>'},
+                        {"text": "Охрана труда", "svg": '<svg><use xlink:href="img/icons/sprite.svg#career-7"></use></svg>'},
+                        {"text": "Профсоюз", "svg": '<svg><use xlink:href="img/icons/sprite.svg#career-8"></use></svg>'}
+                        ])
+                    </div>
+                </div>
+            </section>
+        </main>
+         <!--footer-->
+        @@include('_footer.html')
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
