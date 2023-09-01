@@ -1,4 +1,5 @@
 const header = document.querySelector('.header')
+const mainHeader = document.querySelector('.main-header')
 const iconMenu = document.querySelector('.icon-menu')
 const fixedBlocks = document.querySelectorAll(".fixed-block")
 const modalShowBtn = document.querySelectorAll(".modal-show-btn")
@@ -412,6 +413,17 @@ function closeSelectCustom(select) {
     }
   }, animSpd);
   select.setAttribute("aria-expanded", false);
+}
+//main header bg
+if (mainHeader) {
+  window.addEventListener("scroll", () => {
+    let windowTop = window.pageYOffset || document.documentElement.scrollTop
+    if (windowTop > 100) {
+      mainHeader.classList.remove("header--dark")
+    } else {
+      mainHeader.classList.add("header--dark")
+    }
+  })
 }
 //show/unshow page-nav__subnavs
 const navSelect = document.querySelector(".page-nav--select")

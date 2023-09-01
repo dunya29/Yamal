@@ -111,6 +111,12 @@ h5, .h5 {
     padding: 0 10px;
   }
 }
+.main {
+  padding-top: 65px;
+  @media (max-width: $bp4) {
+    padding-top: 89px;
+  }
+}
 .fixed-block {
   min-width: 320px;
 }

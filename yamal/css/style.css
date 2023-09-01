@@ -381,6 +381,10 @@ h5,
   margin: 0 auto;
 }
 
+.main {
+  padding-top: 65px;
+}
+
 .fixed-block {
   min-width: 320px;
 }
@@ -2156,38 +2160,42 @@ section,
 
 .header {
   padding: 8px 0;
-  position: relative;
-  z-index: 500;
-}
-
-.header.fixed-block {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 500;
+  background: #ffffff;
+  -webkit-transition: background 0.5s ease-out;
+  -o-transition: background 0.5s ease-out;
+  transition: background 0.5s ease-out;
 }
 
-.header.fixed-block .header__logo svg {
+.header.header--dark {
+  background: transparent;
+}
+
+.header.header--dark .header__logo svg {
   fill: #ffffff;
 }
 
-.header.fixed-block .menu__header {
+.header.header--dark .menu__header {
   color: #ffffff;
 }
 
-.header.fixed-block .menu__header svg {
+.header.header--dark .menu__header svg {
   fill: #ffffff;
 }
 
-.header.fixed-block .search-toggle svg {
+.header.header--dark .search-toggle svg {
   fill: #ffffff;
 }
 
-.header.fixed-block .header__link {
+.header.header--dark .header__link {
   color: #ffffff;
 }
 
-.header.fixed-block .icon-menu span {
+.header.header--dark .icon-menu span {
   background: #ffffff;
 }
 
@@ -2233,9 +2241,6 @@ section,
 
 .header__logo svg {
   fill: #1F0303;
-  -webkit-transition: all 0.3s 0.2s ease-in-out;
-  -o-transition: all 0.3s 0.2s ease-in-out;
-  transition: all 0.3s 0.2s ease-in-out;
 }
 
 .header__right {
@@ -2324,6 +2329,7 @@ section,
 .intro {
   padding: 79px 0 30px;
   position: relative;
+  margin-top: -65px;
 }
 
 .intro .container {
@@ -5880,11 +5886,11 @@ section,
     display: none;
   }
 
-  .header.fixed-block .menu__header {
+  .header.header--dark .menu__header {
     color: #000;
   }
 
-  .header.fixed-block .menu__header svg {
+  .header.header--dark .menu__header svg {
     fill: #000;
   }
 
@@ -5908,6 +5914,12 @@ section,
 
   .header__search {
     min-height: 235px;
+  }
+
+  .header.open .header__logo svg {
+    -webkit-transition: all 0.3s 0.2s ease-in-out;
+    -o-transition: all 0.3s 0.2s ease-in-out;
+    transition: all 0.3s 0.2s ease-in-out;
   }
 
   .header.open .search-toggle svg {
@@ -7734,8 +7746,16 @@ section,
 }
 
 @media (max-width: 576.98px) {
+  .main {
+    padding-top: 89px;
+  }
+
   .header {
     padding: 20px 0;
+  }
+
+  .intro {
+    margin-top: -89px;
   }
 
   .intro .media-cover img {

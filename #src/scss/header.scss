@@ -205,13 +205,15 @@
 }
 .header {
     padding: 8px 0;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 500;
-    &.fixed-block {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+    background: $white;
+    transition: background .5s ease-out;
+    &.header--dark {
+        background: transparent;
         .header__logo svg {
             fill: $white;
         }
@@ -258,7 +260,6 @@
         z-index: 501;
         svg {
             fill: $black;
-            transition: all .3s .2s ease-in-out;
         }
     }
     &__right {
@@ -324,10 +325,10 @@
         }
     }
     @media (max-width: $bp2) {
-        &.fixed-block .menu__header {
+        &.header--dark .menu__header {
             color: #000;
         }
-        &.fixed-block .menu__header svg {
+        &.header--dark .menu__header svg {
             fill: #000;
         }
         .search-toggle {
@@ -345,6 +346,9 @@
             min-height: 235px;
         }
         &.open {
+            .header__logo svg {
+                transition: all .3s .2s ease-in-out;
+            }
             .search-toggle {
                 svg {
                     fill: $black;

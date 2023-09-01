@@ -1,6 +1,7 @@
 .intro {
     padding: 79px 0 30px;
     position: relative;
+    margin-top: -65px;
     .container {
         height: 100%;
         min-height: 770px;
@@ -117,6 +118,7 @@
         }
     }
     @media (max-width: $bp4) {
+        margin-top: -89px;
         .media-cover img {
             left: -230px;
             width: calc(100% + 230px);
