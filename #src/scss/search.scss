@@ -11,19 +11,25 @@
     }
     &__top {   
         display: flex;
-        justify-content: flex-end;  
+        justify-content: flex-end; 
+        margin-bottom: 16px; 
     }
     &__body {
         max-width: 860px;
     }
+    @media (max-width: $bp1) {
+        &__body {
+            max-width: 834px;
+        }
+    }
     @media (max-width: $bp2) {
         &__top {
-            margin-bottom: 28px;
+            margin-bottom: 44px;
         }
     }
 }
 .search-form {
-    padding: 16px 0;
+    padding: 0 0 16px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid $gray;
@@ -42,6 +48,11 @@
    }
    input, input::placeholder {
     font-size: 24px;
+   }
+   @media (max-width: $bp3) {
+    input, input::placeholder {
+        font-size: 16px;
+       }
    }
 }
 .search-results {

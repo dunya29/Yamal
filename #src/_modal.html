@@ -89,8 +89,9 @@
                     <div class="item-form">
                         <input type="text" placeholder="Компания">
                     </div>
-                    <div class="item-form">
+                    <div class="item-form error">
                         <input type="text" placeholder="Телефон или почта">
+                        <div class="item-form__error">Заполните обязательное поле</div>
                     </div>
                     <div class="item-form">
                         <textarea placeholder="Сообщение" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
@@ -104,66 +105,6 @@
                     </div>
                 </div>
                 <div class="form__footer">
-                    <label class="item-checkbox">
-                        <input type="checkbox">
-                        <span>Я соглашаюсь на обработку моих персональных данных</span>
-                    </label>
-                    <button type="submit" class="btn main-btn">Оставить заявку</button>
-                </div>   
-            </form>
-        </div>
-    </div>
-</div>
-<!--vacancy-modal-->
-<div class="modal" id="vac-modal">
-    <div class="modal__overlay">
-        <div class="modal__content">
-            <button class="modal__close" aria-label="Закрыть всплывающее окно"></button>
-            <h3>Отклик на вакансию</h3>
-            <form action="" class="form" onsubmit="event.preventDefault();formSuccess(this)">
-                <div class="form__items">
-                    <div class="item-form">
-                        <div class="select-custom" data-select="Локация" aria-expanded="false">
-                            <div class="select-custom__selected"><span>Локация</span></div>
-                            <ul class="select-custom__options">
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="1"><span>Локация 1</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="2"><span>Локация 2</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="3"><span>Локация 3</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="4"><span>Локация 4</span></label></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item-form">
-                        <div class="select-custom" data-select="Должность" aria-expanded="false">
-                            <div class="select-custom__selected"><span>Должность</span></div>
-                            <ul class="select-custom__options">
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="1"><span>Должность 1</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="2"><span>Должность 2</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="3"><span>Должность 3</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="4"><span>Должность 4</span></label></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item-form file-form">
-                        <label>
-                            <input type="file">
-                            <span>Прикрепить резюме</span>
-                        </label>
-                        <div class="file-form__items"></div>
-                    </div>
-                    <div class="item-form">
-                        <label class="item-checkbox">
-                            <input type="checkbox" class="cv-btn">
-                            <span>У меня нет резюме</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="vac-extra form__extra"></div>
-                <div class="form__footer">
-                    <label class="item-checkbox">
-                        <input type="checkbox">
-                        <span>Готов к работе вахтовым методом</span>
-                    </label>
                     <label class="item-checkbox">
                         <input type="checkbox">
                         <span>Я соглашаюсь на обработку моих персональных данных</span>

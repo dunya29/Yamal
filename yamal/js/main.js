@@ -225,12 +225,10 @@ document.querySelectorAll(".file-form").forEach(item => {
 })
 // vacancy extra items
 const vacMod = document.querySelector("#vac-modal")
-const cvBtn = vacMod.querySelector(".cv-btn")
-const vacExtra = vacMod.querySelector(".vac-extra")
 if (vacMod) {
-  cvBtn.addEventListener("change", () => {
-    if (cvBtn.checked) {
-      vacExtra.innerHTML =  `
+  vacMod.querySelector(".cv-btn").addEventListener("change", () => {
+    if (vacMod.querySelector(".cv-btn").checked) {
+      vacMod.querySelector(".vac-extra").innerHTML =  `
       <div class="vac-extra__inner">
       <div class="vac-extra__col">
           <h5>Личная информация</h5>
@@ -356,7 +354,7 @@ if (vacMod) {
       }
     })
     } else {
-      vacExtra.innerHTML = ""
+      vacMod.querySelector(".vac-extra").innerHTML = ""
     }
   })
 }
@@ -457,6 +455,14 @@ const empBlocks = document.querySelectorAll(".employees [data-block]")
 if (document.querySelector(".employees")) {
   tabSwitch(empNavs, empBlocks)
 }
+//item-employees progress bar
+if (document.querySelector(".item-employees")) {
+  document.querySelectorAll(".item-employees__det").forEach(item => {
+    if (item.querySelector(".item-employees__bar")) {
+      item.querySelector(".item-employees__bar span").style.width = item.querySelector(".item-employees__perc").textContent
+    }
+  })
+}
 // share
 if (document.querySelector(".share")) {
   const url = encodeURIComponent(window.location.href)
@@ -511,6 +517,7 @@ if (document.querySelector(".page-swipers")) {
       spaceBetween: 12,
       breakpoints: {
         1300.98: {
+          slidesPerView: 3,
           spaceBetween: 20,
           direction: 'vertical',
         },
@@ -521,6 +528,7 @@ if (document.querySelector(".page-swipers")) {
         },
         767.98: {
           slidesPerView: 4.14,
+          spaceBetween: 12,
           direction: 'horizontal',
         }, 
       },
@@ -680,12 +688,15 @@ if (document.querySelector(".video-reviews")) {
     breakpoints: {
       992.98: {
         slidesPerView: 3,
+        spaceBetween: 20,
       },
       767.98: {
+        slidesPerView: 2,
         spaceBetween: 20,
       }, 
       520.98: {
         slidesPerView: 2,
+        spaceBetween: 10,
       }, 
     },
   })
@@ -708,13 +719,6 @@ if (document.querySelector(".text-reviews")) {
     },
     loop: true,
     speed: 500
-  })
-}
-if (document.querySelector(".item-employees")) {
-  document.querySelectorAll(".item-employees__det").forEach(item => {
-    if (item.querySelector(".item-employees__bar")) {
-      item.querySelector(".item-employees__bar").style.width = item.querySelector(".item-employees__perc").textContent
-    }
   })
 }
 //custom fancybox

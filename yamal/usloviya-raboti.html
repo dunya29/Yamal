@@ -32,12 +32,12 @@
         </a>
         <nav class="menu">
             <ul class="menu__list">
-                <li><a href="#" class="menu__header">О компании</a></li>
-                <li><a href="#" class="menu__header">Услуги</a></li>
-                <li><a href="#" class="menu__header">Проекты</a></li>
-                <li><a href="#" class="menu__header">Новости</a></li>
-                <li><a href="#" class="menu__header">Закупки</a></li>
-                <li>
+                <li ><a href="#" class="menu__header">О компании</a></li>
+                <li ><a href="#" class="menu__header">Услуги</a></li>
+                <li ><a href="#" class="menu__header">Проекты</a></li>
+                <li ><a href="#" class="menu__header">Новости</a></li>
+                <li ><a href="#" class="menu__header">Закупки</a></li>
+                <li class='active'>
                     <a href="#" class="menu__header has-subnavs">
                         Карьера
                         <svg>
@@ -74,80 +74,81 @@
             </div>
         </div>
     </div>
-    <div class="fixed-block search header__search">
-        <div class="container">
-            <div class="search__top">
-                <button class="icon-close" type="button"  aria-label="Закрыть поиск">
+    <!--header-search-->
+<div class="fixed-block search header__search">
+    <div class="container">
+        <div class="search__top">
+            <button class="icon-close" type="button"  aria-label="Закрыть поиск">
+                <svg>
+                    <use xlink:href="img/icons/sprite.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="search__body">
+            <form action="" class="search-form" onsubmit="event.preventDefault();searchFormSuccess(this)">
+                <input type="text" placeholder="Найти">
+                <button type="reset" class="icon-close" role="button" aria-label="Очистить поиск">
                     <svg>
                         <use xlink:href="img/icons/sprite.svg#icon-close"></use>
                     </svg>
                 </button>
-            </div>
-            <div class="search__body">
-                <form action="" class="search-form" onsubmit="event.preventDefault();searchFormSuccess(this)">
-                    <input type="text" placeholder="Найти">
-                    <button type="reset" class="icon-close" role="button" aria-label="Очистить поиск">
-                        <svg>
-                            <use xlink:href="img/icons/sprite.svg#icon-close"></use>
-                        </svg>
-                    </button>
-                    <button class="search-form__btn" type="submit">
-                        <svg>
-                            <use xlink:href="img/icons/sprite.svg#search"></use>
-                        </svg>
-                    </button>
-                </form>
-                <div class="search-results">
-                    <div class="search-results__lbl">Найдено: 25</div>
-                    <div class="search-results__items">
-                        <div class="item-search">
-                            <div class="h4">1.</div>
-                            <div class="item-search__content">
-                                <h3><a href="#"><mark>Машина</mark></a></h3>
-                                <p>...ервоначально предприятие делало акцент в своей деятельности на строительстве и
-                                    содержании промысловых дорог (автозимников), но по мере <mark>машиной</mark>....</p>
-                            </div>
-                        </div>
-                        <div class="item-search">
-                            <div class="h4">2.</div>
-                            <div class="item-search__content">
-                                <h3><a href="#"><mark>Машина</mark></a></h3>
-                                <p>...ервоначально предприятие делало акцент в своей деятельности на строительстве и
-                                    содержании промысловых дорог (автозимников), но по мере <mark>машиной</mark>....</p>
-                            </div>
-                        </div>
-                        <div class="item-search">
-                            <div class="h4">3.</div>
-                            <div class="item-search__content">
-                                <h3><a href="#"><mark>Машина</mark></a></h3>
-                                <p>...ервоначально предприятие делало акцент в своей деятельности на строительстве и
-                                    содержании промысловых дорог (автозимников), но по мере <mark>машиной</mark>....</p>
-                            </div>
-                        </div>
-                        <div class="item-search">
-                            <div class="h4">4.</div>
-                            <div class="item-search__content">
-                                <h3><a href="#"><mark>Машина</mark></a></h3>
-                                <p>...ервоначально предприятие делало акцент в своей деятельности на строительстве и
-                                    содержании промысловых дорог (автозимников), но по мере <mark>машиной</mark>....</p>
-                            </div>
-                        </div>
-                        <div class="item-search">
-                            <div class="h4">5.</div>
-                            <div class="item-search__content">
-                                <h3><a href="#"><mark>Машина</mark></a></h3>
-                                <p>...ервоначально предприятие делало акцент в своей деятельности на строительстве и
-                                    содержании промысловых дорог (автозимников), но по мере <mark>машиной</mark>....</p>
-                            </div>
+                <button class="search-form__btn" type="submit">
+                    <svg>
+                        <use xlink:href="img/icons/sprite.svg#search"></use>
+                    </svg>
+                </button>
+            </form>
+            <div class="search-results">
+                <div class="search-results__lbl">Найдено: 25</div>
+                <div class="search-results__items">
+                    <div class="item-search">
+                        <div class="h4">1.</div>
+                        <div class="item-search__content">
+                            <h3><a href="#"><mark>Машина</mark></a></h3>
+                            <p>...ервоначально предприятие делало акцент в своей деятельности на строительстве и
+                                содержании промысловых дорог (автозимников), но по мере <mark>машиной</mark>....</p>
                         </div>
                     </div>
-                    <div class="search-results__footer">
-                        <a href="#" class="btn stroke-btn">Все результаты</a>
+                    <div class="item-search">
+                        <div class="h4">2.</div>
+                        <div class="item-search__content">
+                            <h3><a href="#"><mark>Машина</mark></a></h3>
+                            <p>...ервоначально предприятие делало акцент в своей деятельности на строительстве и
+                                содержании промысловых дорог (автозимников), но по мере <mark>машиной</mark>....</p>
+                        </div>
                     </div>
+                    <div class="item-search">
+                        <div class="h4">3.</div>
+                        <div class="item-search__content">
+                            <h3><a href="#"><mark>Машина</mark></a></h3>
+                            <p>...ервоначально предприятие делало акцент в своей деятельности на строительстве и
+                                содержании промысловых дорог (автозимников), но по мере <mark>машиной</mark>....</p>
+                        </div>
+                    </div>
+                    <div class="item-search">
+                        <div class="h4">4.</div>
+                        <div class="item-search__content">
+                            <h3><a href="#"><mark>Машина</mark></a></h3>
+                            <p>...ервоначально предприятие делало акцент в своей деятельности на строительстве и
+                                содержании промысловых дорог (автозимников), но по мере <mark>машиной</mark>....</p>
+                        </div>
+                    </div>
+                    <div class="item-search">
+                        <div class="h4">5.</div>
+                        <div class="item-search__content">
+                            <h3><a href="#"><mark>Машина</mark></a></h3>
+                            <p>...ервоначально предприятие делало акцент в своей деятельности на строительстве и
+                                содержании промысловых дорог (автозимников), но по мере <mark>машиной</mark>....</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-results__footer">
+                    <a href="#" class="btn stroke-btn">Все результаты</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </header>
         <!--main-->
         <main class="main">
@@ -216,32 +217,34 @@
     <p>квалифицированных инженерно-технических специалистов</p>
 </div>
                                 </div>
-                                <h3>Что мы предлагаем</h3>
-                                <div class="conditions__items">
-                                    <div class="item-cond">
+                                <div class="grid-cond">
+                                    <h3>Что мы предлагаем</h3>
+                                    <div class="grid-cond__cols">
+                                        <div class="item-cond">
     <h4>Официальное<br>трудоустройство</h4>
     <svg><use xlink:href="img/icons/sprite.svg#cond-1"></use></svg>
 </div>
-                                    <div class="item-cond">
+                                        <div class="item-cond">
     <h4>Конкурентная заработная плата, выплата вахтовой надбавки</h4>
     <svg><use xlink:href="img/icons/sprite.svg#cond-2"></use></svg>
 </div>
-                                    <div class="item-cond">
+                                        <div class="item-cond">
     <h4>Современные и удобные рабочие места, комфортные условия проживания</h4>
     <svg><use xlink:href="img/icons/sprite.svg#cond-3"></use></svg>
 </div>
-                                    <div class="item-cond">
+                                        <div class="item-cond">
     <h4>Интересные задачи и новые возможности.</h4><h4>Обучение и карьерный рост</h4>
     <svg><use xlink:href="img/icons/sprite.svg#cond-4"></use></svg>
 </div>
-                                    <div class="item-cond">
+                                        <div class="item-cond">
     <h4>Оплачиваемый проезд к месту работы.</h4><h4>Обеспечение вкусным<br>и здоровым питанием</h4>
     <svg><use xlink:href="img/icons/sprite.svg#cond-5"></use></svg>
 </div>
-                                    <div class="item-cond">
+                                        <div class="item-cond">
     <h4>Корпоративные мероприятия, команды по футболу, волейболу<br>и иным видам спорта</h4>
     <svg><use xlink:href="img/icons/sprite.svg#cond-6"></use></svg>
 </div>
+                                    </div>
                                 </div>
                                 <div class="soc-pack">
                                     <div class="soc-pack__inner">
@@ -454,8 +457,9 @@
                     <div class="item-form">
                         <input type="text" placeholder="Компания">
                     </div>
-                    <div class="item-form">
+                    <div class="item-form error">
                         <input type="text" placeholder="Телефон или почта">
+                        <div class="item-form__error">Заполните обязательное поле</div>
                     </div>
                     <div class="item-form">
                         <textarea placeholder="Сообщение" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
@@ -479,66 +483,7 @@
         </div>
     </div>
 </div>
-<!--vacancy-modal-->
-<div class="modal" id="vac-modal">
-    <div class="modal__overlay">
-        <div class="modal__content">
-            <button class="modal__close" aria-label="Закрыть всплывающее окно"></button>
-            <h3>Отклик на вакансию</h3>
-            <form action="" class="form" onsubmit="event.preventDefault();formSuccess(this)">
-                <div class="form__items">
-                    <div class="item-form">
-                        <div class="select-custom" data-select="Локация" aria-expanded="false">
-                            <div class="select-custom__selected"><span>Локация</span></div>
-                            <ul class="select-custom__options">
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="1"><span>Локация 1</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="2"><span>Локация 2</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="3"><span>Локация 3</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="4"><span>Локация 4</span></label></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item-form">
-                        <div class="select-custom" data-select="Должность" aria-expanded="false">
-                            <div class="select-custom__selected"><span>Должность</span></div>
-                            <ul class="select-custom__options">
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="1"><span>Должность 1</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="2"><span>Должность 2</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="3"><span>Должность 3</span></label></li>
-                              <li class="select-custom__option"><label><input type="radio" name="service" value="4"><span>Должность 4</span></label></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item-form file-form">
-                        <label>
-                            <input type="file">
-                            <span>Прикрепить резюме</span>
-                        </label>
-                        <div class="file-form__items"></div>
-                    </div>
-                    <div class="item-form">
-                        <label class="item-checkbox">
-                            <input type="checkbox" class="cv-btn">
-                            <span>У меня нет резюме</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="vac-extra form__extra"></div>
-                <div class="form__footer">
-                    <label class="item-checkbox">
-                        <input type="checkbox">
-                        <span>Готов к работе вахтовым методом</span>
-                    </label>
-                    <label class="item-checkbox">
-                        <input type="checkbox">
-                        <span>Я соглашаюсь на обработку моих персональных данных</span>
-                    </label>
-                    <button type="submit" class="btn main-btn">Оставить заявку</button>
-                </div>   
-            </form>
-        </div>
-    </div>
-</div>
+
     </div>
     <!--js-->
 <script src="js/libs/jquery.min.js"></script>

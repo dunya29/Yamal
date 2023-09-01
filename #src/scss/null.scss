@@ -42,6 +42,12 @@ sub, sup {
   position: relative;
   vertical-align: baseline;
 }
+strong, b {
+  font-weight: 500;
+}
+em {
+  font-style: italic;
+}
 mark {
   background-color: rgba(217, 27, 27, 0.2)
 }

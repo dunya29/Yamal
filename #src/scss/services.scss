@@ -200,6 +200,9 @@
     }
 }
 .our-people {
+    .item-head {
+        grid-template-columns: calc(25% - 15px) 1fr;
+    }
     .item-head .item-quote {
         grid-area: 1/2/2/3;
     }
@@ -217,6 +220,9 @@
         gap: 20px;
     }
     @media (max-width: $bp1) {
+        .item-head {
+            gap: 25px 15px;
+        }
         .item-head__preview {
             grid-area: 1/1/3/2;
         }

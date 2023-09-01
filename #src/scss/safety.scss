@@ -7,6 +7,7 @@
     }
     .link-download {
         height: 53px;
+        padding: 16px;
         background: $black;
         color: $white;
         position: absolute;
@@ -15,6 +16,7 @@
         width: 100%;
         border: none;
         border-radius: 0;
+        justify-content: flex-start;
         svg {
             fill: $white;
         }
@@ -27,15 +29,42 @@
     }
 }
 .safety {
-    &__content {
+    ol li {
+        font-size: 20px;
+        min-height: 50px;
+        padding: 16px 0 8px 56px;    
+        border-bottom: 1px solid rgba(217, 27, 27, 0.30);
+        margin-bottom: 4px;  
+        &:before {
+          width: 56px;
+          font-size: 40px;
+          line-height: 1;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+    }
+    &__block {
         max-width: 725px;
+        margin: 40px 0;
         p {
             max-width: 575px;
         }
+        &--gray {
+            max-width: none;
+            padding: 20px 25px 20px 20px;
+            background: $light-gray;
+        }
     }
-    &__content--gray {
-        padding: 20px;
-        background: $light-gray;
+    &__block + ol {
+        margin-top: -20px;
+    }
+    @media (max-width:$bp5) {
+        ol li {
+            font-size: 16px;
+        }
+        &__block--gray {
+            padding: 8px;
+        }
     }
 }
 .safety-events {
@@ -56,6 +85,11 @@
         &__items {
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+        }
+    }
+    @media (max-width: $bp3) {
+        h3 {
+            font-size: 24px;
         }
     }
     @media (max-width: $bp4) {

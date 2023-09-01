@@ -20,7 +20,7 @@
 }
 .item-head {
     display: grid;
-    grid-template-columns: calc(25% - 15px) 1fr;
+    grid-template-columns: calc(33% - 10px) 1fr;
     gap: 16px 20px;
     align-items: start;
     margin-bottom: 20px;
@@ -37,7 +37,7 @@
         margin-bottom: 24px;
     }
     @media (max-width: $bp1) {
-        gap: 25px 15px;
+        gap: 8px 15px;
         &__preview {
             grid-area: 1/1/2/2;
         }
@@ -129,10 +129,18 @@
         &__items {
             grid-template-columns: 1fr;
         }
+        .page-action .link-download {
+            width: 100%;
+        }
     }
 }
 .union-life {
     .page-action {
         justify-content: space-between;
+    }
+    @media (max-width: $bp5) {
+        .page-action .link-download {
+            width: 100%;
+        }
     }
 }

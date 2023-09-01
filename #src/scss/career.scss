@@ -28,7 +28,7 @@
     }
 }
 .item-career {
-    height: 100px;
+    min-height: 100px;
     padding: 12px;
     background: $light-gray;
     position: relative;
@@ -57,6 +57,12 @@
         svg {
             fill: $white;
             opacity: .2;
+        }
+    }
+    @media (max-width: $bp3) {
+        min-height: 80px;
+        h4 {
+            font-size: 20px;
         }
     }
 }

@@ -1,8 +1,11 @@
 .culture {
     .page-content {
+        .culture__block--yes ul li {
+            margin-bottom: 20px;
+        }  
         ul li {
             margin-bottom: 16px;
-        }       
+        }      
         h4 {
             font-weight: 500;
             &.red {
@@ -14,7 +17,7 @@
     &__principles {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 -10px 15px;
+        margin: 30px -10px 15px;
         span {
             min-width: 310px;
             font-size: 20px;
@@ -46,6 +49,9 @@
         }
     }
     @media (max-width: $bp3) {
+        h4 {
+            font-size: 20px;
+        } 
         &__principles {
             flex-direction: column;
             align-items: flex-start;
@@ -56,7 +62,11 @@
             }
         }
         &__block {
-            background-size: 150px 150px; 
+            background-size: 130px 130px;
+            ul li {
+                font-size: 14px;
+                line-height: 1.2;
+            } 
         }    
     }
     @media (max-width: $bp5) {

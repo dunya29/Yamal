@@ -2,6 +2,7 @@
     overflow: visible;
     .page-content p {
         font-size: 20px;
+        line-height: 1.2;
         margin: 0;
     }
     #map{
@@ -19,9 +20,23 @@
             height: 226px;
         }
     }
+    @media (max-width: $bp3) {
+        .page-content p {
+            font-size: 14px;
+        }
+    }
     @media (max-width: $bp5) {
         .page-sticky__btns {
             flex-direction: column;
+        }
+        #map {
+            margin: 0 -20px 16px;
+            border-radius: 0;
+        }
+    }
+    @media (max-width: 370px) {
+        #map {
+            margin: 0 -10px 16px
         }
     }
 }

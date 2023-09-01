@@ -18,6 +18,14 @@
                         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
                     }
                 }
+                &.active {
+                    .menu__header {
+                       color: $red;
+                       svg {
+                           fill: $red;
+                       } 
+                    }
+                }
             }
         }
     }
@@ -275,6 +283,13 @@
         .container {
             padding: 20px 20px 63px;
             overflow-y: auto;
+            scrollbar-width: none;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                display: none;
+                width: 0;
+                height: 0;
+            }
         }
         &.show {
             visibility: visible;
@@ -293,6 +308,9 @@
     }
     &__link {
         color: $black;
+        &.active {
+            color: $red;
+        }
         @media (max-width: $bp2) {
             display: none;
         }
