@@ -352,3 +352,47 @@
         }
     }
 }
+.fancybox-bg {
+    background: rgba(0,0,0, 0.7);
+}
+.fancybox-button {
+    background: none;
+    svg path {
+        fill: $white;
+    }
+}
+.fancybox-button--arrow_left,
+.fancybox-button--arrow_right {
+    svg {
+        opacity: 0
+    }
+    &::after {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border-bottom: 3px solid $white;
+        border-right: 3px solid $white;
+        border-radius: 3px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        pointer-events: none;
+    }
+}
+.fancybox-button--arrow_left {
+    &:after {
+        transform: translate(-50%,-50%) rotate(135deg);
+    }
+   
+}
+.fancybox-button--arrow_right {
+    &::after {
+      transform: translate(-50%,-50%) rotate(-45deg);  
+    }   
+}
+.fancybox-button--zoom,
+.fancybox-button--play,
+.fancybox-button--thumbs {
+    display: none;
+}

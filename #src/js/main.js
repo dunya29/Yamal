@@ -735,7 +735,7 @@ fancyItems.forEach(item => {
     })
     let initialSl = imgSrc.indexOf(item.getAttribute("data-src"))
     document.querySelector("footer").insertAdjacentHTML('afterend', `
-    <div class="modal fancy-modal">
+    <div class="modal fancy-modal"">
         <div class="modal__overlay">
            <div class="modal__content">
               <button class="modal__close" aria-label="Закрыть всплывающее окно"></button>
@@ -756,11 +756,11 @@ fancyItems.forEach(item => {
               </div>
               <div class="swiper thumbswiper">
                 <div class="swiper-wrapper">
-                   ${imgSrc.map(item => `<div class="swiper-slide">
+                   ${imgSrc.map(item => `<a class="swiper-slide">
                          <div class="swiper-img ${objectFit}">
                              <img src=${item} alt="">
                          </div>
-                     </div>`).join("")}
+                     </a>`).join("")}
                    </div>
               </div>
            </div>

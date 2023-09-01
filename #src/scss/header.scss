@@ -97,7 +97,7 @@
         line-height: 1.3;
         z-index: 500;
         display: flex;
-        transition: all .5s linear;
+        transition: all .5s ease-in-out;
         transition-timing-function: cubic-bezier(.25,.74,.22,.99);
         overflow: hidden;
         &__list {
@@ -188,7 +188,7 @@
             left: 0;
             width: 100%;
             border-radius: 4px;
-            transition: background .4s ease-in-out, top .2s ease-in-out .4s,bottom .2s ease-in-out .3s,transform .4s ease-in-out,opacity .2s .2s ease-in-out;           
+            transition: background .3s ease-in-out, top .2s ease-in-out .3s,bottom .2s ease-in-out .3s,transform .3s ease-in-out,opacity .2s .2s ease-in-out;           
             transform-origin: center center;
             &:first-child {
                 top: 5px;
@@ -258,6 +258,7 @@
         z-index: 501;
         svg {
             fill: $black;
+            transition: all .3s .2s ease-in-out;
         }
     }
     &__right {

@@ -1837,6 +1837,58 @@ section,
   right: 15px;
 }
 
+.fancybox-bg {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.fancybox-button {
+  background: none;
+}
+
+.fancybox-button svg path {
+  fill: #ffffff;
+}
+
+.fancybox-button--arrow_left svg,
+.fancybox-button--arrow_right svg {
+  opacity: 0;
+}
+
+.fancybox-button--arrow_left::after,
+.fancybox-button--arrow_right::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-bottom: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.fancybox-button--arrow_left:after {
+  -webkit-transform: translate(-50%, -50%) rotate(135deg);
+  -ms-transform: translate(-50%, -50%) rotate(135deg);
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.fancybox-button--arrow_right::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.fancybox-button--zoom,
+.fancybox-button--play,
+.fancybox-button--thumbs {
+  display: none;
+}
+
 .breadcrumbs {
   padding-top: 12px;
   margin-bottom: 60px;
@@ -2181,6 +2233,9 @@ section,
 
 .header__logo svg {
   fill: #1F0303;
+  -webkit-transition: all 0.3s 0.2s ease-in-out;
+  -o-transition: all 0.3s 0.2s ease-in-out;
+  transition: all 0.3s 0.2s ease-in-out;
 }
 
 .header__right {
@@ -5689,9 +5744,9 @@ section,
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     -webkit-transition-timing-function: cubic-bezier(0.25, 0.74, 0.22, 0.99);
     -o-transition-timing-function: cubic-bezier(0.25, 0.74, 0.22, 0.99);
     transition-timing-function: cubic-bezier(0.25, 0.74, 0.22, 0.99);
@@ -5796,11 +5851,11 @@ section,
     left: 0;
     width: 100%;
     border-radius: 4px;
-    -webkit-transition: background 0.4s ease-in-out, top 0.2s ease-in-out 0.4s, bottom 0.2s ease-in-out 0.3s, opacity 0.2s 0.2s ease-in-out, -webkit-transform 0.4s ease-in-out;
-    transition: background 0.4s ease-in-out, top 0.2s ease-in-out 0.4s, bottom 0.2s ease-in-out 0.3s, opacity 0.2s 0.2s ease-in-out, -webkit-transform 0.4s ease-in-out;
-    -o-transition: background 0.4s ease-in-out, top 0.2s ease-in-out 0.4s, bottom 0.2s ease-in-out 0.3s, transform 0.4s ease-in-out, opacity 0.2s 0.2s ease-in-out;
-    transition: background 0.4s ease-in-out, top 0.2s ease-in-out 0.4s, bottom 0.2s ease-in-out 0.3s, transform 0.4s ease-in-out, opacity 0.2s 0.2s ease-in-out;
-    transition: background 0.4s ease-in-out, top 0.2s ease-in-out 0.4s, bottom 0.2s ease-in-out 0.3s, transform 0.4s ease-in-out, opacity 0.2s 0.2s ease-in-out, -webkit-transform 0.4s ease-in-out;
+    -webkit-transition: background 0.3s ease-in-out, top 0.2s ease-in-out 0.3s, bottom 0.2s ease-in-out 0.3s, opacity 0.2s 0.2s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, top 0.2s ease-in-out 0.3s, bottom 0.2s ease-in-out 0.3s, opacity 0.2s 0.2s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    -o-transition: background 0.3s ease-in-out, top 0.2s ease-in-out 0.3s, bottom 0.2s ease-in-out 0.3s, transform 0.3s ease-in-out, opacity 0.2s 0.2s ease-in-out;
+    transition: background 0.3s ease-in-out, top 0.2s ease-in-out 0.3s, bottom 0.2s ease-in-out 0.3s, transform 0.3s ease-in-out, opacity 0.2s 0.2s ease-in-out;
+    transition: background 0.3s ease-in-out, top 0.2s ease-in-out 0.3s, bottom 0.2s ease-in-out 0.3s, transform 0.3s ease-in-out, opacity 0.2s 0.2s ease-in-out, -webkit-transform 0.3s ease-in-out;
     -webkit-transform-origin: center center;
     -ms-transform-origin: center center;
     transform-origin: center center;
