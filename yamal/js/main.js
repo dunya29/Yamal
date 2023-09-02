@@ -417,7 +417,7 @@ function closeSelectCustom(select) {
 //fixed header
 window.addEventListener("scroll", () => {
   let windowTop = window.pageYOffset || document.documentElement.scrollTop
-  if (windowTop > 100) {
+  if (windowTop > 1) {
     header.classList.add("scrolled")
     if (mainHeader) {
       mainHeader.classList.remove("header--dark")

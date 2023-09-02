@@ -2228,9 +2228,9 @@ section,
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+  -webkit-transition: padding 0.5s linear;
+  -o-transition: padding 0.5s linear;
+  transition: padding 0.5s linear;
 }
 
 .header__logo {
