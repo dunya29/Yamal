@@ -414,17 +414,21 @@ function closeSelectCustom(select) {
   }, animSpd);
   select.setAttribute("aria-expanded", false);
 }
-//main header bg
-if (mainHeader) {
-  window.addEventListener("scroll", () => {
-    let windowTop = window.pageYOffset || document.documentElement.scrollTop
-    if (windowTop > 100) {
+//fixed header
+window.addEventListener("scroll", () => {
+  let windowTop = window.pageYOffset || document.documentElement.scrollTop
+  if (windowTop > 100) {
+    header.classList.add("scrolled")
+    if (mainHeader) {
       mainHeader.classList.remove("header--dark")
-    } else {
+    }
+  } else {
+    header.classList.remove("scrolled")
+    if (mainHeader) {
       mainHeader.classList.add("header--dark")
     }
-  })
-}
+  }
+})
 //show/unshow page-nav__subnavs
 const navSelect = document.querySelector(".page-nav--select")
 if (navSelect && navSelect.querySelector(".page-nav__item.active")) {

@@ -204,7 +204,6 @@
     }
 }
 .header {
-    padding: 8px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -248,9 +247,12 @@
         }
     }
     &__inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        transition: all .5s linear;
     }
     &__logo {
         flex: 0 0 200px;
@@ -382,7 +384,22 @@
         }
     }
     @media (max-width: $bp4) {
-        padding: 20px 0;
+        &__inner {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        &.scrolled {
+            .header__inner {
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+        }
+    }
+    @media (max-width: 370px) {
+        &__inner {
+            padding-top: 20px;
+            padding-bottom:20px;
+        }
     }
 }
 
