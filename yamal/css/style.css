@@ -382,7 +382,7 @@ h5,
 }
 
 .main {
-  padding-top: 65px;
+  padding-top: 79px;
 }
 
 .fixed-block {
@@ -2333,7 +2333,7 @@ section,
 .intro {
   padding: 79px 0 30px;
   position: relative;
-  margin-top: -65px;
+  margin-top: -79px;
 }
 
 .intro .container {
@@ -5249,6 +5249,10 @@ section,
     max-width: 1045px;
   }
 
+  .main {
+    padding-top: 65px;
+  }
+
   .page-gallery__items {
     gap: 15px;
   }
@@ -5290,6 +5294,7 @@ section,
 
   .intro {
     padding: 65px 0 30px;
+    margin-top: -65px;
   }
 
   .intro .container {

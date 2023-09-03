@@ -112,7 +112,10 @@ h5, .h5 {
   }
 }
 .main {
-  padding-top: 65px;
+  padding-top: 79px;
+  @media (max-width: $bp1) {
+    padding-top: 65px;
+  }
   @media (max-width: $bp4) {
     padding-top: 89px;
   }

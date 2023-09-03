@@ -1,7 +1,7 @@
 .intro {
     padding: 79px 0 30px;
     position: relative;
-    margin-top: -65px;
+    margin-top: -79px;
     .container {
         height: 100%;
         min-height: 770px;
@@ -58,6 +58,7 @@
     }
     @media (max-width: $bp1) {
         padding: 65px 0 30px;
+        margin-top: -65px;
         .container {
             min-height: 505px
         }
