@@ -52,6 +52,9 @@
             a {
                 font-weight: 500;
                 color: $black;
+                &:hover {
+                    color: $red;
+                }
             }
           }
         }
