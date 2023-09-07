@@ -94,9 +94,7 @@
                     &:hover, &.active {
                         color: $red;
                         font-weight: 600; 
-                       /*  text-shadow:
-                        0px 0px 1.5px $red,
-                        0.1px -0.1px 0 $red */
+                        //text-shadow: 0 0 1px #d91b1b;
                     }
                 }
             }
