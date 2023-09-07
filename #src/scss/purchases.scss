@@ -56,6 +56,8 @@
         margin-bottom: 20px;
         span {
             display: block;
+            color: $black;
+            pointer-events: none;
             &:first-child {
                 opacity: 0.5;
                 margin-bottom: 8px;

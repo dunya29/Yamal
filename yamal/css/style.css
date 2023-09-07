@@ -4667,6 +4667,8 @@ section,
 
 .item-purchases__det span {
   display: block;
+  color: #1F0303;
+  pointer-events: none;
 }
 
 .item-purchases__det span:first-child {
