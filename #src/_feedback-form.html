@@ -8,10 +8,10 @@
         <form action="" class="form" onsubmit="event.preventDefault();formSuccess(this)">
             <div class="form__items">
                 <div class="form__item">
-                    <input type="text" placeholder="Имя">
+                    <input type="text" placeholder="Имя" class="required">
                 </div>
                 <div class="form__item">
-                    <input type="text" placeholder="Почта или телефон">
+                    <input type="text" placeholder="Почта или телефон" class="required">
                 </div>
                 <div class="form__item">
                     <textarea placeholder="Сообщение" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
@@ -19,10 +19,10 @@
             </div>
             <div class="form__footer">
                 <label class="item-checkbox">
-                    <input type="checkbox">
-                    <span>Я соглашаюсь на обработку моих персональных данных</span>
+                    <input type="checkbox" checked class="required">
+                    <span>Я соглашаюсь на <a href="" target="_blank">обработку моих персональных данных</a></span>
                 </label>
-                <button type="submit" class="btn main-btn">Связаться</button>
+                <button type="submit" class="btn main-btn disabled">Связаться</button>
             </div>           
         </form>
     </div>

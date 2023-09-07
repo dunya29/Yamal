@@ -127,9 +127,13 @@
     }
 }
 #vac-modal {
-    .main-btn {
-        color: $white;
-        background: $gray;
+    .vac-extra__inner {
+        display: none;
+    }
+    .vac-extra.open {
+        .vac-extra__inner {
+            display: block;
+        }
     }
 }
 #success-modal,

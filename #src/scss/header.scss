@@ -234,6 +234,11 @@
             }
         }
     }
+    &.main-header {
+        .header__logo {
+            pointer-events: none;
+        }
+    }
     .search-toggle {
         flex: 0 0 24px;
         margin-right: 16px;
@@ -312,6 +317,9 @@
     }
     &__link {
         color: $black;
+        &:hover {
+            color: $red !important;
+        }
         &.active {
             color: $red;
         }

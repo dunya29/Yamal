@@ -72,6 +72,7 @@ function maskInput() {
     })
   }
 }
+maskInput()
 //show modal
 function openModal(modal) {
   if (!header.classList.contains("open")) {
@@ -88,7 +89,6 @@ function closeModal(modal) {
     }
   }, 300);
 }
-maskInput()
 //searchFormSuccess
 function searchFormSuccess(form) {
   form.querySelector("input").value = ""
@@ -188,6 +188,37 @@ searchClose.addEventListener("click", () => {
 overlay.addEventListener("click", () => {
   searchClose.click()
 })
+// form btn disabled
+const form = document.querySelectorAll(".form")
+function checkRequiredVal(form) {
+  return Array.from(form.querySelectorAll(".required")).filter(item => {
+    if (item.type === "checkbox") {
+      return !item.checked
+    } else {
+      return item.value.length === 0
+    }
+  })
+}
+function formBtnDisable(form) {
+  form.querySelector("button[type=submit]").classList.add("disabled")
+}
+function formBtnEnable(form) {
+  form.querySelector("button[type=submit]").classList.remove("disabled")
+}
+
+if (form) {
+  form.forEach(item => {
+    item.querySelectorAll(".required").forEach(el => {
+      el.addEventListener("input", () => {
+        if (checkRequiredVal(item).length === 0) {
+          formBtnEnable(item)
+        } else {
+          formBtnDisable(item)
+        }
+      })
+    })
+  })
+}
 // search-form reset btn show/unshow
 const searchForm = document.querySelectorAll(".search-form")
 searchForm.forEach(form => {
@@ -226,136 +257,49 @@ document.querySelectorAll(".file-form").forEach(item => {
 })
 // vacancy extra items
 const vacMod = document.querySelector("#vac-modal")
+function vacModBtn() {
+  setTimeout(() => {
+    if ( vacMod.querySelector(".file-form__item") && vacMod.querySelector(".item-checkbox .required").checked) {
+      formBtnEnable(vacMod)
+    } 
+  }, 0);
+}
 if (vacMod) {
+  vacMod.querySelector(".file-form").addEventListener("change", e => {
+    vacModBtn()
+  })
+  vacMod.querySelector(".item-checkbox .required").addEventListener("change", e => {
+    vacModBtn()
+  })
+  vacMod.querySelector(".file-form").addEventListener("click", e => {
+    const del = vacMod.querySelector(".file-form__del")
+    if (del && del.contains(e.target)) {
+      if (checkRequiredVal(vacMod).length === 0) {
+        formBtnEnable(vacMod)
+      } else {
+        formBtnDisable(vacMod)
+      }
+    }   
+  }) 
   vacMod.querySelector(".cv-btn").addEventListener("change", () => {
     if (vacMod.querySelector(".cv-btn").checked) {
-      vacMod.querySelector(".vac-extra").innerHTML =  `
-      <div class="vac-extra__inner">
-      <div class="vac-extra__col">
-          <h5>Личная информация</h5>
-          <div class="vac-extra__items">
-              <div class="vac-extra__item">
-                  <div class="item-form">
-                      <input type="text" placeholder="Фио">
-                  </div>
-                  <div class="form__grid">
-                      <div class="item-form">
-                          <input type="text" placeholder="Дата рождения 01.01.1995">
-                      </div>
-                      <div class="item-form">
-                          <input type="text" placeholder="Регион проживания">
-                      </div>
-                  </div>
-                  <div class="form__grid">
-                    <div class="item-form">
-                      <input type="text" placeholder="Гражданство">
-                    </div>
-                    <div class="item-form">
-                      <input type="tel" placeholder="Телефон">
-                    </div>
-                  </div>
-                  <div class="item-form">
-                      <input type="text" placeholder="Почта">
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="vac-extra__col">
-          <h5>Образование</h5>
-          <div class="vac-extra__items">
-              <div class="vac-extra__item">
-                  <div class="item-form">
-                      <input type="text" placeholder="Учреждение">
-                  </div>                        
-                  <div class="item-form">
-                      <input type="text" placeholder="Факультет">
-                  </div>
-                  <div class="item-form">
-                      <input type="text" placeholder="Специальность">
-                  </div>
-                  <div class="form__grid">
-                    <div class="item-form">
-                      <input type="number" placeholder="Год начала обучения">
-                    </div>
-                    <div class="item-form">
-                        <input type="number" placeholder="Год окончания обучения">
-                    </div>
-                  </div>
-              </div>
-          </div>
-          <div class="vac-extra__btn"><span>+</span>Еще образование</div>
-      </div>
-      <div class="vac-extra__col">
-          <h5>Опыт работы</h5>
-          <div class="vac-extra__items">
-              <div class="vac-extra__item">
-                  <div class="item-form">
-                      <input type="text" placeholder="Место работы">
-                  </div>                        
-                  <div class="item-form">
-                      <input type="text" placeholder="Должность">
-                  </div>
-                  <div class="item-form">
-                      <input type="text" placeholder="Стаж">
-                  </div>
-              </div>
-          </div>
-          <div class="vac-extra__btn"><span>+</span>Еще место работы</div>
-      </div>
-      <div class="vac-extra__col">
-          <h5>Навыки</h5>
-          <div class="vac-extra__items">
-            <div class="vac-extra__item">
-                <div class="item-form">
-                    <textarea placeholder="Степень владения компьютером (начальный/уверенный/профессиональный)" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
-                </div>                        
-                <div class="item-form">
-                    <textarea placeholder="Перечислите основные программные продукты, которыми владеете" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
-                </div>
-                <div class="item-form item-form--license">
-                    <label class="item-checkbox">
-                        <input type="checkbox">
-                        <span>Есть водительское удостоверение</span>
-                    </label>
-                    <label class="item-radio"><input type="radio" name="driver-license" value="A"><span>А</span></label>
-                    <label class="item-radio"><input type="radio" name="driver-license" value="B"><span>B</span></label>
-                    <label class="item-radio"><input type="radio" name="driver-license" value="BE"><span>BE</span></label>
-                    <label class="item-radio"><input type="radio" name="driver-license" value="C"><span>C</span></label>
-                    <label class="item-radio"><input type="radio" name="driver-license" value="CE"><span>CE</span></label>
-                    <label class="item-radio"><input type="radio" name="driver-license" value="D"><span>D</span></label>
-                    <label class="item-radio"><input type="radio" name="driver-license" value="DE"><span>DE</span></label>
-                </div>
-            </div>
-          </div>
-      </div>
-      <div class="vac-extra__col">
-          <h5>Судимость</h5>
-          <div class="vac-extra__items">
-              <div class="vac-extra__item">
-                  <div class="item-form">
-                      <label class="item-checkbox">
-                          <input type="checkbox">
-                          <span>Есть</span>
-                      </label>
-                  </div>  
-                  <div class="item-form">
-                      <input type="text" placeholder="Статья">
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-    `
-    maskInput()
-    document.querySelectorAll(".vac-extra__col").forEach(item => {
-      if( item.querySelector(".vac-extra__btn")) {
-        item.querySelector(".vac-extra__btn").addEventListener("click", () => {
-          item.querySelector(".vac-extra__items").innerHTML += item.querySelector(".vac-extra__item").innerHTML
-        })
-      }
-    })
+      vacMod.querySelector(".vac-extra").classList.add("open")
+      maskInput()
+      document.querySelectorAll(".vac-extra__col").forEach(item => {
+        if( item.querySelector(".vac-extra__btn")) {
+          item.querySelector(".vac-extra__btn").addEventListener("click", () => {
+            item.querySelector(".vac-extra__items").innerHTML += `<div class="vac-extra__item">${item.querySelector(".vac-extra__item").innerHTML}</div>`
+            if (item.classList.contains("edu") && item.querySelectorAll(".vac-extra__item").length >= 5) {
+              item.querySelector(".vac-extra__btn").classList.add("disabled")
+            }
+            if (item.classList.contains("exp") && item.querySelectorAll(".vac-extra__item").length >= 10) {
+              item.querySelector(".vac-extra__btn").classList.add("disabled")
+            }
+          })
+        }
+      })
     } else {
-      vacMod.querySelector(".vac-extra").innerHTML = ""
+      vacMod.querySelector(".vac-extra").classList.remove("open")
     }
   })
 }

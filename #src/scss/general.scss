@@ -551,16 +551,18 @@ section, .section {
     display: none;
   }
   span {
+    display: block;
     font-size: 14px;
     line-height: 1.2;
     color: rgba($black, 0.5);
-    display: flex;
-    align-items: flex-start;
     position: relative;
+    padding-left: 33px;
     &:before {
       content: "";
       display: block;
-      flex: 0 0 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 20px;
       height: 20px;
       border: 1px solid $black;
@@ -577,6 +579,12 @@ section, .section {
       left: 4px;
       opacity: 0;
       transition: all .3s ease;
+    }
+    a {
+      color: inherit;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   input:checked + span:after {
@@ -663,7 +671,7 @@ section, .section {
   &__item {
     display: flex;
     align-items: center;
-    margin-top: 16px;
+    margin: 10px 0 30px;
   }
   &__name {
      color: rgba($black, 0.5);
@@ -671,6 +679,7 @@ section, .section {
   }
   &__del {
     flex: 0 0 16px;
+    margin-bottom: 4px;
     svg {
       fill: $gray;
       width: 16px;
@@ -694,9 +703,10 @@ section, .section {
   }
   &__error {
     font-size: 14px;
+    font-weight: 500;
     display: block;
     margin-top: 4px;
-    color: rgba($red, 0.5)
+    color: rgba($red, 0.6)
   }
   &--license {
     margin: 0 -7px;
@@ -722,6 +732,11 @@ section, .section {
     height: 100px;
     resize: vertical;
     overflow: hidden;
+  }
+  .main-btn.disabled,
+  .main-btn:disabled {
+    pointer-events: none;
+    background:  #B5ADAD
   }
   &__grid {
     display: grid;
@@ -756,6 +771,7 @@ section, .section {
   &__btn {
     display: flex;
     align-items: center;
+    cursor: pointer;
     span {
       flex: 0 0 26px;
       width: 26px;
@@ -765,6 +781,10 @@ section, .section {
       color: $red;
       text-align: center;
       margin: 0 8px 2px 0;
+    }
+    &.disabled {
+      opacity: 0.7;
+      pointer-events: none;
     }
   }
   @media (max-width: $bp3) {
@@ -959,11 +979,12 @@ section, .section {
     border: 1px solid $gray;
   }
   &__option {
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid $gray;  
     a {
       color: $black;
     }
     label {
+      cursor: pointer;
       transition: all .3s linear;
       input {
         display: none;

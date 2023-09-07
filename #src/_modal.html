@@ -20,10 +20,10 @@
                         </div>
                     </div>
                     <div class="item-form">
-                        <input type="text" placeholder="Имя">
+                        <input type="text" placeholder="Имя" class="required">
                     </div>
                     <div class="item-form">
-                        <input type="text" placeholder="Телефон или почта">
+                        <input type="text" placeholder="Телефон или почта" class="required">
                     </div>
                     <div class="item-form">
                         <textarea placeholder="Сообщение" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
@@ -31,10 +31,10 @@
                 </div>
                 <div class="form__footer">
                     <label class="item-checkbox">
-                        <input type="checkbox">
-                        <span>Я соглашаюсь на обработку моих персональных данных</span>
+                        <input type="checkbox" checked class="required">
+                        <span>Я соглашаюсь на <a href="" target="_blank">обработку моих персональных данных</a></span>
                     </label>
-                    <button type="submit" class="btn main-btn">Оставить заявку</button>
+                    <button type="submit" class="btn main-btn disabled">Оставить заявку</button>
                 </div>   
             </form>
         </div>
@@ -90,7 +90,7 @@
                         <input type="text" placeholder="Компания">
                     </div>
                     <div class="item-form error">
-                        <input type="text" placeholder="Телефон или почта">
+                        <input type="text" placeholder="Телефон или почта" class="required">
                         <div class="item-form__error">Заполните обязательное поле</div>
                     </div>
                     <div class="item-form">
@@ -106,10 +106,10 @@
                 </div>
                 <div class="form__footer">
                     <label class="item-checkbox">
-                        <input type="checkbox">
-                        <span>Я соглашаюсь на обработку моих персональных данных</span>
+                        <input type="checkbox" checked class="required">
+                        <span>Я соглашаюсь на <a href="" target="_blank">обработку моих персональных данных</a></span>
                     </label>
-                    <button type="submit" class="btn main-btn">Оставить заявку</button>
+                    <button type="submit" class="btn main-btn disabled">Оставить заявку</button>
                 </div>   
             </form>
         </div>

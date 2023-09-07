@@ -201,17 +201,133 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="vac-extra form__extra"></div>
+                        <div class="vac-extra form__extra">
+                            <div class="vac-extra__inner">
+                                <div class="vac-extra__col">
+                                    <h5>Личная информация</h5>
+                                    <div class="vac-extra__items">
+                                        <div class="vac-extra__item">
+                                            <div class="item-form">
+                                                <input type="text" placeholder="Фио" class="required">
+                                            </div>
+                                            <div class="form__grid">
+                                                <div class="item-form">
+                                                    <input type="text" placeholder="Дата рождения 01.01.1995">
+                                                </div>
+                                                <div class="item-form">
+                                                    <input type="text" placeholder="Регион проживания">
+                                                </div>
+                                            </div>
+                                            <div class="form__grid">
+                                              <div class="item-form">
+                                                <input type="text" placeholder="Гражданство">
+                                              </div>
+                                              <div class="item-form">
+                                                <input type="tel" placeholder="Телефон" class="required">
+                                              </div>
+                                            </div>
+                                            <div class="item-form">
+                                                <input type="text" placeholder="Почта">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vac-extra__col edu">
+                                    <h5>Образование</h5>
+                                    <div class="vac-extra__items">
+                                        <div class="vac-extra__item">
+                                            <div class="item-form">
+                                                <input type="text" placeholder="Учреждение">
+                                            </div>                        
+                                            <div class="item-form">
+                                                <input type="text" placeholder="Факультет">
+                                            </div>
+                                            <div class="item-form">
+                                                <input type="text" placeholder="Специальность">
+                                            </div>
+                                            <div class="form__grid">
+                                              <div class="item-form">
+                                                <input type="number" placeholder="Год начала обучения">
+                                              </div>
+                                              <div class="item-form">
+                                                  <input type="number" placeholder="Год окончания обучения">
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vac-extra__btn"><span>+</span>Еще образование</div>
+                                </div>
+                                <div class="vac-extra__col exp">
+                                    <h5>Опыт работы</h5>
+                                    <div class="vac-extra__items">
+                                        <div class="vac-extra__item">
+                                            <div class="item-form">
+                                                <input type="text" placeholder="Место работы">
+                                            </div>                        
+                                            <div class="item-form">
+                                                <input type="text" placeholder="Должность">
+                                            </div>
+                                            <div class="item-form">
+                                                <input type="text" placeholder="Стаж">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vac-extra__btn"><span>+</span>Еще место работы</div>
+                                </div>
+                                <div class="vac-extra__col">
+                                    <h5>Навыки</h5>
+                                    <div class="vac-extra__items">
+                                      <div class="vac-extra__item">
+                                          <div class="item-form">
+                                              <textarea placeholder="Степень владения компьютером (начальный/уверенный/профессиональный)" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                                          </div>                        
+                                          <div class="item-form">
+                                              <textarea placeholder="Перечислите основные программные продукты, которыми владеете" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                                          </div>
+                                          <div class="item-form item-form--license">
+                                              <label class="item-checkbox">
+                                                  <input type="checkbox">
+                                                  <span>Есть водительское удостоверение</span>
+                                              </label>
+                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="A"><span>А</span></label>
+                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="B"><span>B</span></label>
+                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="BE"><span>BE</span></label>
+                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="C"><span>C</span></label>
+                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="CE"><span>CE</span></label>
+                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="D"><span>D</span></label>
+                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="DE"><span>DE</span></label>
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="vac-extra__col">
+                                    <h5>Судимость</h5>
+                                    <div class="vac-extra__items">
+                                        <div class="vac-extra__item">
+                                            <div class="item-form">
+                                                <label class="item-checkbox">
+                                                    <input type="checkbox">
+                                                    <span>Есть</span>
+                                                </label>
+                                            </div>  
+                                            <div class="item-form">
+                                                <input type="text" placeholder="Статья">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form__footer">
                             <label class="item-checkbox">
                                 <input type="checkbox">
                                 <span>Готов к работе вахтовым методом</span>
                             </label>
                             <label class="item-checkbox">
-                                <input type="checkbox">
-                                <span>Я соглашаюсь на обработку моих персональных данных</span>
+                                <input type="checkbox" checked class="required">
+                                <span>Я соглашаюсь на <a href="" target="_blank">обработку моих персональных данных</a></span>
                             </label>
-                            <button type="submit" class="btn main-btn">Оставить заявку</button>
+                            <button type="submit" class="btn main-btn disabled">Оставить заявку</button>
                         </div>   
                     </form>
                 </div>
