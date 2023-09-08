@@ -394,6 +394,9 @@ if (customSelect) {
 const navSelect = document.querySelector(".page-nav--select")
 if (navSelect && navSelect.querySelector(".page-nav__item.active")) {
   const navSelectItem = navSelect.querySelector(".page-nav__item.active")
+  console.log(navSelect)
+  console.log( navSelectItem)
+  console.log(navSelect.querySelector(".page-nav__item.active"))
   function setSelectedTxt() {
     let activeLink = navSelectItem.querySelector(".page-nav__subnavs a.active")
     if (activeLink) {
