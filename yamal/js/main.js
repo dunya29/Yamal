@@ -392,8 +392,8 @@ if (customSelect) {
 }
 //show/unshow page-nav__subnavs
 const navSelect = document.querySelector(".page-nav--select")
-if (navSelect && navSelect.querySelector(".page-nav__item.active")) {
-  const navSelectItem = navSelect.querySelector(".page-nav__item.active")
+const navSelectItem = navSelect?.querySelector(".page-nav__item.active")
+if (navSelect && navSelectItem) {
   function setSelectedTxt() {
     console.log(navSelectItem)
     console.log(navSelectItem.querySelector(".page-nav__subnavs"))
