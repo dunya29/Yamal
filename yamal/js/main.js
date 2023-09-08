@@ -100,7 +100,10 @@ function formSuccess(form) {
   form.querySelectorAll("input").forEach(inp => {
     if (inp.type != "hidden") {
       inp.value = ""
-      inp.checked = false
+      if (!inp.classList.contains("required")) {
+        inp.checked = false
+      }
+      
     }
   })
   if (form.querySelector(".select-custom")) {
@@ -117,8 +120,8 @@ function formSuccess(form) {
   if (form.querySelector(".file-form__item")) {
     form.querySelector(".file-form__items").innerHTML = ""
   }
-  if (form.querySelector(".form__extra")) {
-    form.querySelector(".form__extra").innerHTML = ""
+  if (form.querySelector(".vac-extra")) {
+    form.querySelector(".vac-extra").classList.remove("open")
   }
   let modal = document.querySelector(".modal.open")
   if (modal) {
@@ -175,16 +178,6 @@ function closeSelectCustom(select) {
     }
   }, animSpd);
   select.setAttribute("aria-expanded", false);
-}
-//check required items value
-function checkRequiredVal(form) {
-  return Array.from(form.querySelectorAll(".required")).filter(item => {
-    if (item.type === "checkbox") {
-      return !item.checked
-    } else {
-      return item.value.length === 0
-    }
-  })
 }
 //form button disable
 function formBtnDisable(form) {
@@ -261,14 +254,12 @@ overlay.addEventListener("click", () => {
 const form = document.querySelectorAll(".form")
 if (form) {
   form.forEach(item => {
-    item.querySelectorAll(".required").forEach(el => {
-      el.addEventListener("input", () => {
-        if (checkRequiredVal(item).length === 0) {
-          formBtnEnable(item)
-        } else {
-          formBtnDisable(item)
-        }
-      })
+    item.querySelector(".required").addEventListener("change", e => {
+      if (e.target.checked) {
+        formBtnEnable(item)
+      } else {
+        formBtnDisable(item)
+      }
     })
   })
 }
@@ -310,13 +301,6 @@ document.querySelectorAll(".file-form").forEach(item => {
 })
 // vacancy extra items
 const vacMod = document.querySelector("#vac-modal")
-function vacModBtn() {
-  setTimeout(() => {
-    if ( vacMod.querySelector(".file-form__item") && vacMod.querySelector(".item-checkbox .required").checked) {
-      formBtnEnable(vacMod)
-    } 
-  }, 0);
-}
 if (vacMod) {
   let location = document.querySelector(".vacancy__info").getAttribute("data-location")
   let position = document.querySelector(".vacancy__info").getAttribute("data-pos")
@@ -328,22 +312,6 @@ if (vacMod) {
   if (posSelect) {
     setActiveOption(posSelect.querySelector(`[data-pos="${position}"]`),posSelect)
   }
-  vacMod.querySelector(".file-form").addEventListener("change", e => {
-    vacModBtn()
-  })
-  vacMod.querySelector(".item-checkbox .required").addEventListener("change", e => {
-    vacModBtn()
-  })
-  vacMod.querySelector(".file-form").addEventListener("click", e => {
-    const del = vacMod.querySelector(".file-form__del")
-    if (del && del.contains(e.target)) {
-      if (checkRequiredVal(vacMod).length === 0) {
-        formBtnEnable(vacMod)
-      } else {
-        formBtnDisable(vacMod)
-      }
-    }   
-  }) 
   vacMod.querySelector(".cv-btn").addEventListener("change", () => {
     if (vacMod.querySelector(".cv-btn").checked) {
       vacMod.querySelector(".vac-extra").classList.add("open")
