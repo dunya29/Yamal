@@ -1240,6 +1240,9 @@ section,
   width: 16px;
   height: 16px;
   margin: 2px 8px 0 0;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .item-quote {
@@ -5141,6 +5144,14 @@ section,
   align-self: center;
 }
 
+.footer__contact .item-contact:hover {
+  color: #D91B1B;
+}
+
+.footer__contact .item-contact:hover svg {
+  fill: #D91B1B;
+}
+
 .footer__bottom {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6370,6 +6381,7 @@ section,
     position: relative;
     z-index: 4;
     margin: 0 10px 16px;
+    min-width: 0;
   }
 
   .page-nav--select .page-nav__item.active.open .page-nav__link {
@@ -6397,6 +6409,13 @@ section,
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+  }
+
+  .page-nav--select .page-nav__link span {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
   }
 
   .page-nav--select .page-nav__link:after {
@@ -6480,7 +6499,7 @@ section,
   .page-nav--select .page-nav__subnavs ul a.active {
     background: transparent;
     color: #D91B1B;
-    text-shadow: 0px 0px 1.5px #D91B1B, 0.1px -0.1px 0 #D91B1B;
+    font-weight: 600;
   }
 
   .page-sticky__info h3 {

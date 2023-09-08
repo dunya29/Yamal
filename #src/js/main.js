@@ -140,6 +140,60 @@ function smoothDrop(header, body) {
   }
   header.classList.toggle("active")
 }
+
+//open custom select
+function openSelectCustom(select) {
+  select.classList.add("open");
+  select.style.zIndex = 5
+  select.setAttribute("aria-expanded", true);
+  select.querySelectorAll(".select-custom__option").forEach(item => {
+    item.addEventListener("click", (e) => {
+      setActiveOption(item, select)
+    });
+  });
+  document.addEventListener("click", function clickOutside(e) {
+    if (!select.contains(e.target)) {
+      closeSelectCustom(select)
+      document.removeEventListener('click', clickOutside);
+    }
+  });
+}
+// set active select option
+function setActiveOption(option,select) {
+  select.querySelectorAll(".select-custom__option").forEach(el => el.classList.remove("selected"))
+  option.classList.add("selected");
+  select.querySelector(".select-custom__selected span").textContent = option.textContent;
+  select.classList.add("selected")
+  closeSelectCustom(select);
+}
+//close custom select
+function closeSelectCustom(select) {
+  select.classList.remove("open");
+  setTimeout(() => {
+    if (!select.classList.contains("open")) {
+      select.style.zIndex = 4
+    }
+  }, animSpd);
+  select.setAttribute("aria-expanded", false);
+}
+//check required items value
+function checkRequiredVal(form) {
+  return Array.from(form.querySelectorAll(".required")).filter(item => {
+    if (item.type === "checkbox") {
+      return !item.checked
+    } else {
+      return item.value.length === 0
+    }
+  })
+}
+//form button disable
+function formBtnDisable(form) {
+  form.querySelector("button[type=submit]").classList.add("disabled")
+}
+//form button enable
+function formBtnEnable(form) {
+  form.querySelector("button[type=submit]").classList.remove("disabled")
+}
 //drop menu
 iconMenu.addEventListener("click", () => {
   if (header.classList.contains("open")) {
@@ -166,6 +220,21 @@ document.querySelectorAll(".menu__header").forEach(item => {
     }
   } )
 })
+//fixed header
+window.addEventListener("scroll", () => {
+  let windowTop = window.pageYOffset || document.documentElement.scrollTop
+  if (windowTop > 1) {
+    header.classList.add("scrolled")
+    if (mainHeader) {
+      mainHeader.classList.remove("header--dark")
+    }
+  } else {
+    header.classList.remove("scrolled")
+    if (mainHeader) {
+      mainHeader.classList.add("header--dark")
+    }
+  }
+})
 //show/unshow search-form
 const searchToggle = document.querySelector(".search-toggle")
 const searchClose = document.querySelector(".search__top .icon-close")
@@ -190,22 +259,6 @@ overlay.addEventListener("click", () => {
 })
 // form btn disabled
 const form = document.querySelectorAll(".form")
-function checkRequiredVal(form) {
-  return Array.from(form.querySelectorAll(".required")).filter(item => {
-    if (item.type === "checkbox") {
-      return !item.checked
-    } else {
-      return item.value.length === 0
-    }
-  })
-}
-function formBtnDisable(form) {
-  form.querySelector("button[type=submit]").classList.add("disabled")
-}
-function formBtnEnable(form) {
-  form.querySelector("button[type=submit]").classList.remove("disabled")
-}
-
 if (form) {
   form.forEach(item => {
     item.querySelectorAll(".required").forEach(el => {
@@ -265,6 +318,16 @@ function vacModBtn() {
   }, 0);
 }
 if (vacMod) {
+  let location = document.querySelector(".vacancy__info").getAttribute("data-location")
+  let position = document.querySelector(".vacancy__info").getAttribute("data-pos")
+  const locSelect = document.querySelector(".select-custom.location")
+  const posSelect = document.querySelector(".select-custom.position")
+  if (locSelect) {
+    setActiveOption(locSelect.querySelector(`[data-location="${location}"]`),locSelect)
+  } 
+  if (posSelect) {
+    setActiveOption(posSelect.querySelector(`[data-pos="${position}"]`),posSelect)
+  }
   vacMod.querySelector(".file-form").addEventListener("change", e => {
     vacModBtn()
   })
@@ -327,56 +390,26 @@ if (customSelect) {
   })
   
 }
-//open custom select
-function openSelectCustom(select) {
-  select.classList.add("open");
-  select.style.zIndex = 5
-  select.setAttribute("aria-expanded", true);
-  select.querySelectorAll(".select-custom__option").forEach(item => {
-    item.addEventListener("click", (e) => {
-      select.querySelectorAll(".select-custom__option").forEach(el => el.classList.remove("selected"))
-      item.classList.add("selected");
-      select.querySelector(".select-custom__selected span").textContent = item.textContent;
-      select.classList.add("selected")
-      closeSelectCustom(select);
-    });
-  });
-  document.addEventListener("click", function clickOutside(e) {
-    if (!select.contains(e.target)) {
-      closeSelectCustom(select)
-      document.removeEventListener('click', clickOutside);
-    }
-  });
-}
-//close custom select
-function closeSelectCustom(select) {
-  select.classList.remove("open");
-  setTimeout(() => {
-    if (!select.classList.contains("open")) {
-      select.style.zIndex = 4
-    }
-  }, animSpd);
-  select.setAttribute("aria-expanded", false);
-}
-//fixed header
-window.addEventListener("scroll", () => {
-  let windowTop = window.pageYOffset || document.documentElement.scrollTop
-  if (windowTop > 1) {
-    header.classList.add("scrolled")
-    if (mainHeader) {
-      mainHeader.classList.remove("header--dark")
-    }
-  } else {
-    header.classList.remove("scrolled")
-    if (mainHeader) {
-      mainHeader.classList.add("header--dark")
-    }
-  }
-})
 //show/unshow page-nav__subnavs
 const navSelect = document.querySelector(".page-nav--select")
 if (navSelect && navSelect.querySelector(".page-nav__item.active")) {
   const navSelectItem = navSelect.querySelector(".page-nav__item.active")
+  function setSelectedTxt() {
+    let activeLink = navSelectItem.querySelector(".page-nav__subnavs a.active")
+    if (activeLink) {
+      navSelectItem.querySelector(".page-nav__link span").textContent = activeLink.textContent;
+    }
+  }
+  if (window.innerWidth <= 992) {
+    setSelectedTxt()
+  }
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 992) {
+      navSelectItem.querySelector(".page-nav__link span").textContent = navSelectItem.getAttribute("data-select");
+    } else {
+      setSelectedTxt()
+    }
+  })
   navSelectItem.querySelector(".page-nav__link").addEventListener("click", e => {
     e.preventDefault()
     if (navSelectItem.classList.contains("open")) {
