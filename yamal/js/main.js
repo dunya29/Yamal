@@ -395,9 +395,14 @@ const navSelect = document.querySelector(".page-nav--select")
 if (navSelect && navSelect.querySelector(".page-nav__item.active")) {
   const navSelectItem = navSelect.querySelector(".page-nav__item.active")
   function setSelectedTxt() {
-    let activeLink = navSelectItem.querySelector(".page-nav__subnavs li a.active")
+    console.log(navSelectItem)
+    console.log(navSelectItem.querySelector(".page-nav__subnavs"))
+    console.log(navSelectItem.querySelector(".page-nav__subnavs li"))
+    console.log(document.querySelector(".page-nav__subnavs li a.active"))
     console.log(navSelectItem.querySelector(".page-nav__subnavs li a.active"))
     console.log(navSelectItem.querySelector(".page-nav__subnavs a.active"))
+    debugger
+    let activeLink = navSelectItem.querySelector(".page-nav__subnavs li a.active")
     if (activeLink) {
       navSelectItem.querySelector(".page-nav__link span").textContent = activeLink.textContent;
     }
