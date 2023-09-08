@@ -584,40 +584,44 @@
                                 <div class="vac-extra__col">
                                     <h5>Навыки</h5>
                                     <div class="vac-extra__items">
-                                      <div class="vac-extra__item">
-                                          <div class="item-form">
-                                              <textarea placeholder="Степень владения компьютером (начальный/уверенный/профессиональный)" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
-                                          </div>                        
-                                          <div class="item-form">
-                                              <textarea placeholder="Перечислите основные программные продукты, которыми владеете" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
-                                          </div>
-                                          <div class="item-form item-form--license">
-                                              <label class="item-checkbox">
-                                                  <input type="checkbox">
-                                                  <span>Есть водительское удостоверение</span>
-                                              </label>
-                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="A"><span>А</span></label>
-                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="B"><span>B</span></label>
-                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="BE"><span>BE</span></label>
-                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="C"><span>C</span></label>
-                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="CE"><span>CE</span></label>
-                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="D"><span>D</span></label>
-                                              <label class="item-radio"><input type="checkbox" name="driver-license" value="DE"><span>DE</span></label>
-                                          </div>
-                                      </div>
+                                        <div class="vac-extra__item">
+                                            <div class="item-form">
+                                                <textarea placeholder="Степень владения компьютером (начальный/уверенный/профессиональный)" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                                            </div>                        
+                                            <div class="item-form">
+                                                <textarea placeholder="Перечислите основные программные продукты, которыми владеете" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="vac-extra__item vac-extra__item--switch">
+                                            <div class="item-form">
+                                                <label class="item-checkbox">
+                                                    <input type="checkbox">
+                                                    <span>Есть водительское удостоверение</span>
+                                                </label>
+                                            </div>
+                                            <div class="item-form item-form--license item-form--hidden">
+                                                <label><input type="checkbox" name="driver-license" value="A"><span>А</span></label>
+                                                <label><input type="checkbox" name="driver-license" value="B"><span>B</span></label>
+                                                <label><input type="checkbox" name="driver-license" value="BE"><span>BE</span></label>
+                                                <label><input type="checkbox" name="driver-license" value="C"><span>C</span></label>
+                                                <label><input type="checkbox" name="driver-license" value="CE"><span>CE</span></label>
+                                                <label><input type="checkbox" name="driver-license" value="D"><span>D</span></label>
+                                                <label><input type="checkbox" name="driver-license" value="DE"><span>DE</span></label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="vac-extra__col">
                                     <h5>Судимость</h5>
                                     <div class="vac-extra__items">
-                                        <div class="vac-extra__item">
+                                        <div class="vac-extra__item vac-extra__item--switch">
                                             <div class="item-form">
                                                 <label class="item-checkbox">
                                                     <input type="checkbox">
                                                     <span>Есть</span>
                                                 </label>
                                             </div>  
-                                            <div class="item-form">
+                                            <div class="item-form item-form--hidden">
                                                 <input type="text" placeholder="Статья">
                                             </div>
                                         </div>

@@ -597,30 +597,6 @@ section, .section {
     margin-bottom: 20px;
   }
 }
-.item-radio {
-  display: inline-block;
-  cursor: pointer;
-  &:last-child {
-    margin-right: 0!important
-  }
-  input {
-    display: none;
-  }
-  span {
-    display: inline-flex;
-    width: 36px;
-    height: 36px;
-    border: 1px solid $red;
-    border-radius: 4px;
-    align-items: center;
-    justify-content: center;
-    transition: all .3s linear;
-  }
-  input:checked + span {
-    color: $white;
-    background: red;
-  }
-}
 .link-download {
   border: 1px solid $red;
   border-radius: 4px;  
@@ -713,15 +689,37 @@ section, .section {
   }
   &--license {
     margin: 0 -7px;
-    .item-checkbox {
-      margin: 0 7px 7px;
-    }
-    .item-radio {
+    label {
       margin: 7px;
+      display: inline-block;
+      cursor: pointer;
+      &:last-child {
+        margin-right: 0!important
+      }
+      input {
+        display: none;
+      }
+      span {
+        display: inline-flex;
+        width: 36px;
+        height: 36px;
+        border: 1px solid $red;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s linear;
+      }
+      input:checked + span {
+        color: $white;
+        background: red;
+      }
     }
     .item-form__error {
       margin: 4px 7px 0;
     }
+  }
+  &--hidden {
+    display: none;
   }
 }
 .form {

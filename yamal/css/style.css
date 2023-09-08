@@ -908,43 +908,6 @@ section,
   opacity: 1;
 }
 
-.item-radio {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.item-radio:last-child {
-  margin-right: 0 !important;
-}
-
-.item-radio input {
-  display: none;
-}
-
-.item-radio span {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 36px;
-  height: 36px;
-  border: 1px solid #D91B1B;
-  border-radius: 4px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-
-.item-radio input:checked + span {
-  color: #ffffff;
-  background: red;
-}
-
 .link-download {
   border: 1px solid #D91B1B;
   border-radius: 4px;
@@ -1057,16 +1020,50 @@ section,
   margin: 0 -7px;
 }
 
-.item-form--license .item-checkbox {
-  margin: 0 7px 7px;
+.item-form--license label {
+  margin: 7px;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.item-form--license .item-radio {
-  margin: 7px;
+.item-form--license label:last-child {
+  margin-right: 0 !important;
+}
+
+.item-form--license label input {
+  display: none;
+}
+
+.item-form--license label span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #D91B1B;
+  border-radius: 4px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.item-form--license label input:checked + span {
+  color: #ffffff;
+  background: red;
 }
 
 .item-form--license .item-form__error {
   margin: 4px 7px 0;
+}
+
+.item-form--hidden {
+  display: none;
 }
 
 .form input,

@@ -333,6 +333,15 @@ if (vacMod) {
       vacMod.querySelector(".vac-extra").classList.remove("open")
     }
   })
+  document.querySelectorAll(".vac-extra__item--switch").forEach(item => {
+    item.querySelector("input").addEventListener("change", e => {
+      if (e.target.checked) {
+        item.querySelector(".item-form--hidden").style.display = "block"
+      } else {
+        item.querySelector(".item-form--hidden").style.display = "none"
+      }
+    })
+  })
 }
 //play video
 if (document.querySelector(".item-card--video")) {
