@@ -108,12 +108,10 @@ function formSuccess(form) {
   })
   if (form.querySelector(".select-custom")) {
     form.querySelectorAll(".select-custom").forEach(select => {
-      if (!select.classList.contains("noreset")) {
-        let spanTxt = select.getAttribute("data-select")
-        select.querySelector(".select-custom__selected span").textContent = spanTxt
-        select.classList.remove("selected")
-        select.querySelectorAll(".select-custom__option").forEach(el => el.classList.remove("selected"))
-      }
+      let spanTxt = select.getAttribute("data-select")
+      select.querySelector(".select-custom__selected span").textContent = spanTxt
+      select.classList.remove("selected")
+      select.querySelectorAll(".select-custom__option").forEach(el => el.classList.remove("selected"))
     })
   }
   if (form.querySelector("textarea")) {
@@ -122,7 +120,8 @@ function formSuccess(form) {
   if (form.querySelector(".file-form__item")) {
     form.querySelector(".file-form__items").innerHTML = ""
   }
-  if (form.querySelector(".vac-extra")) {
+  if (form.classList.contains("vac-form")) {
+    vacSelect()
     form.querySelector(".vac-extra").classList.remove("open")
     form.querySelectorAll(".vac-extra__items").forEach(item => {
       item.querySelectorAll(".vac-extra__item").forEach((el,idx) => {
@@ -309,8 +308,7 @@ document.querySelectorAll(".file-form").forEach(item => {
   }) 
 })
 // vacancy extra items
-const vacMod = document.querySelector("#vac-modal")
-if (vacMod) {
+function vacSelect() {
   let location = document.querySelector(".vacancy__info").getAttribute("data-location")
   let position = document.querySelector(".vacancy__info").getAttribute("data-pos")
   const locSelect = document.querySelector(".select-custom.location")
@@ -321,6 +319,10 @@ if (vacMod) {
   if (posSelect) {
     setActiveOption(posSelect.querySelector(`[data-pos="${position}"]`),posSelect)
   }
+}
+const vacMod = document.querySelector("#vac-modal")
+if (vacMod) {
+  vacSelect()
   vacMod.querySelector(".cv-btn").addEventListener("change", () => {
     if (vacMod.querySelector(".cv-btn").checked) {
       vacMod.querySelector(".vac-extra").classList.add("open")
