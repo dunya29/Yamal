@@ -108,10 +108,12 @@ function formSuccess(form) {
   })
   if (form.querySelector(".select-custom")) {
     form.querySelectorAll(".select-custom").forEach(select => {
-      let spanTxt = select.getAttribute("data-select")
-      select.querySelector(".select-custom__selected span").textContent = spanTxt
-      select.classList.remove("selected")
-      select.querySelectorAll(".select-custom__option").forEach(el => el.classList.remove("selected"))
+      if (!select.classList.contains("noreset")) {
+        let spanTxt = select.getAttribute("data-select")
+        select.querySelector(".select-custom__selected span").textContent = spanTxt
+        select.classList.remove("selected")
+        select.querySelectorAll(".select-custom__option").forEach(el => el.classList.remove("selected"))
+      }
     })
   }
   if (form.querySelector("textarea")) {
@@ -122,6 +124,13 @@ function formSuccess(form) {
   }
   if (form.querySelector(".vac-extra")) {
     form.querySelector(".vac-extra").classList.remove("open")
+    form.querySelectorAll(".vac-extra__items").forEach(item => {
+      item.querySelectorAll(".vac-extra__item").forEach((el,idx) => {
+        if (idx != 0) {
+          el.remove()
+        }
+      })
+    })
   }
   let modal = document.querySelector(".modal.open")
   if (modal) {
@@ -250,6 +259,18 @@ searchClose.addEventListener("click", () => {
 overlay.addEventListener("click", () => {
   searchClose.click()
 })
+// search-form reset btn show/unshow
+const searchForm = document.querySelectorAll(".search-form")
+searchForm.forEach(form => {
+  form.querySelector('input').addEventListener("input", () => {
+    if (form.querySelector('input').value.length > 0) {
+      resetBtnVisible(form)
+    } else {
+      resetBtnHidden(form)
+    }
+  })
+  form.querySelector(".icon-close").addEventListener("click",()=> resetBtnHidden(form))
+})
 // form btn disabled
 const form = document.querySelectorAll(".form")
 if (form) {
@@ -263,18 +284,6 @@ if (form) {
     })
   })
 }
-// search-form reset btn show/unshow
-const searchForm = document.querySelectorAll(".search-form")
-searchForm.forEach(form => {
-  form.querySelector('input').addEventListener("input", () => {
-    if (form.querySelector('input').value.length > 0) {
-      resetBtnVisible(form)
-    } else {
-      resetBtnHidden(form)
-    }
-  })
-  form.querySelector(".icon-close").addEventListener("click",()=> resetBtnHidden(form))
-})
 //file-form
 document.querySelectorAll(".file-form").forEach(item => {
   item.querySelector("input").addEventListener("change", e => {
@@ -319,7 +328,7 @@ if (vacMod) {
       document.querySelectorAll(".vac-extra__col").forEach(item => {
         if( item.querySelector(".vac-extra__btn")) {
           item.querySelector(".vac-extra__btn").addEventListener("click", () => {
-            item.querySelector(".vac-extra__items").innerHTML += `<div class="vac-extra__item">${item.querySelector(".vac-extra__item").innerHTML}</div>`
+            item.querySelector(".vac-extra__items").insertAdjacentHTML("beforeend",`<div class="vac-extra__item">${item.querySelector(".vac-extra__item").innerHTML}</div>`)
             if (item.classList.contains("edu") && item.querySelectorAll(".vac-extra__item").length >= 5) {
               item.querySelector(".vac-extra__btn").classList.add("disabled")
             }
@@ -344,11 +353,10 @@ if (vacMod) {
   })
 }
 //play video
-if (document.querySelector(".item-card--video")) {
-  const cardVideo = document.querySelector(".item-card--video")
+const cardVideo = document.querySelector(".item-card--video")
+if (cardVideo) {
   window.addEventListener("scroll", () => {
     if (cardVideo.getBoundingClientRect().bottom - window.innerHeight < 0 ) {
-      console.log(cardVideo.querySelector("video").autoplay)
       cardVideo.querySelector("video").play()
       cardVideo.querySelector("video").autoplay = true
     }

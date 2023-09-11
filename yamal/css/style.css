@@ -863,7 +863,7 @@ section,
 .item-checkbox span {
   display: block;
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 20px;
   color: rgba(31, 3, 3, 0.5);
   position: relative;
   padding-left: 33px;
