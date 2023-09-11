@@ -1567,6 +1567,8 @@ section,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .pagination__arr {
@@ -1586,6 +1588,7 @@ section,
 .pagination__link {
   padding: 5px 12px;
   color: rgba(31, 3, 3, 0.5);
+  white-space: nowrap;
 }
 
 .pagination__item {
@@ -1593,6 +1596,7 @@ section,
   color: rgba(31, 3, 3, 0.5);
   font-size: 26px;
   letter-spacing: -0.05em;
+  white-space: nowrap;
 }
 
 .pagination .current {

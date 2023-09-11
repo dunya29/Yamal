@@ -16,6 +16,7 @@
 .pagination {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 	&__arr {
         display: block;
         flex: 0 0 32px;
@@ -29,12 +30,14 @@
 	&__link {
         padding: 5px 12px;
         color: rgba($black,0.5);
+        white-space: nowrap;
     }
 	&__item {
         padding: 0 8px;
         color: rgba($black,0.5);
         font-size: 26px;
         letter-spacing: -0.05em;
+        white-space: nowrap;
     }
     .current {
         color: $black;
