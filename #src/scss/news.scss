@@ -146,7 +146,6 @@
 .article {
     .page-content {
         max-width: 860px;
-        margin-bottom: 60px;
     }
     &__date {
         color: rgba(#000000, 0.5);
@@ -167,49 +166,6 @@
         p {
             font-size: 14px;
             line-height: 1.2;
-        }
-    }
-}
-.article-table {
-    &__cols {
-        overflow-x: auto;
-        scrollbar-width: none;
-        &::-webkit-scrollbar {
-           display: none;
-        }
-    }
-    &__col {       
-        display: flex;
-        &:last-child span{
-            border-bottom: 1px solid $gray;
-        }
-        &:nth-child(2n + 1) span {
-            background: $light-gray;
-        }
-        &:first-child span{
-            color: $white;
-            background: $black;
-        }
-        span {
-            flex: 0 0 216px;
-            padding: 10px;
-            min-height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            word-break: break-word;
-            border-left: 1px solid $gray;
-            border-right: 1px solid $gray;
-            &:nth-child(2n) {
-                margin: 0 -1px;
-            }
-        }
-    }
-    @media (max-width: $bp1) {
-        &__col {
-            span {
-                flex: 0 0 200px;
-            }
         }
     }
 }
