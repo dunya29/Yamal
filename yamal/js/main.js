@@ -361,7 +361,7 @@ function vacSelect() {
 }
 const vacMod = document.querySelector("#vac-modal")
 if (vacMod) {
-  vacSelect()
+  //vacSelect()
   vacMod.querySelector(".cv-btn").addEventListener("change", () => {
     if (vacMod.querySelector(".cv-btn").checked) {
       vacMod.querySelector(".vac-extra").classList.add("open")
