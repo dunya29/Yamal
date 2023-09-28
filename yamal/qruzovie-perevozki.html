@@ -12,6 +12,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <link href="css/fancybox.min.css" type="text/css" rel="stylesheet">
     <link href="css/style.min.css" type="text/css" rel="stylesheet">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
     <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin> 
     <title>Грузовые автоперевозки</title>
 </head>
@@ -404,13 +405,13 @@
         </div>
         <form action="" class="form" onsubmit="event.preventDefault();formSuccess(this)">
             <div class="form__items">
-                <div class="form__item">
+                <div class="item-form">
                     <input type="text" placeholder="Имя">
                 </div>
-                <div class="form__item">
-                    <input type="text" placeholder="Почта или телефон">
+                <div class="item-form">
+                    <input type="text" placeholder="Почта или телефон" name="contact">
                 </div>
-                <div class="form__item">
+                <div class="item-form">
                     <textarea placeholder="Сообщение" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
                 </div>
             </div>

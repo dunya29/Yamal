@@ -15,6 +15,30 @@ function windoOnResize() {
 }
 window.addEventListener("resize", windoOnResize)
 window.addEventListener('orientationchange', windoOnResize);
+//get path to sprite id
+function sprite(id) {
+  return '<svg><use xlink:href="html/img/icons/sprite.svg#' + id + '"></use></svg>'
+}
+// contact validate
+function contactValidate() {
+  let error = false;
+  document.querySelectorAll("input[name=contact").forEach(function(inp) {
+    if (inp.value.length > 0) {
+      if (/@/.test(inp.value)) {
+        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(inp.value)) {
+          error = true
+          inp.parentNode.classList.add("error")
+        } 
+      } else {         
+        if (!/^((\+7|7|8)([\s\-])?)?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(inp.value)) {
+          error = true
+          inp.parentNode.classList.add("error")
+        }
+      }
+    }
+  })
+  return error
+}
 //enable scroll
 function enableScroll() {
   if (fixedBlocks) {
@@ -96,7 +120,7 @@ function searchFormSuccess(form) {
 }
 // formSuccess
 function formSuccess(form) {
-  form.querySelectorAll(".form__item").forEach(item => item.classList.remove("error"))
+  form.querySelectorAll(".item-form").forEach(item => item.classList.remove("error"))
   form.querySelectorAll("input").forEach(inp => {
     if (inp.type != "hidden") {
       inp.value = ""
@@ -289,11 +313,24 @@ document.querySelectorAll(".file-form").forEach(item => {
     let files = e.target.files
     for (let i = 0; i < files.length; i++) {
       let file = files[i]
-      item.querySelector(".file-form__items").innerHTML = `<div class="file-form__item">
-      <span class="file-form__name">${file.name} ${file.size}KB</span>
-      <span class="file-form__del"><svg><use xlink:href="img/icons/sprite.svg#del"></use></svg></span>
-      </div>
-  `
+      if (file.size >  10 * 1024 * 1024) {
+        item.querySelector("input").value = "" 
+        item.classList.add("error")
+        item.querySelector(".file-form__items").innerHTML ="" 
+        item.querySelector("[data-error]")?.remove()
+        if (!item.querySelector(".file-form__error")) {
+          item.insertAdjacentHTML("beforeend",'<div class="file-form__error">Файл должен быть менее 10 МБ</div>')
+        }
+      } else {
+        item.classList.remove("error")
+        item.querySelector(".file-form__error")?.remove()
+        item.querySelector("[data-error]")?.remove()
+        item.querySelector(".file-form__items").innerHTML = `<div class="file-form__item">
+        <span class="file-form__name">${file.name} ${file.size}KB</span>
+        <span class="file-form__del">${sprite("del")}</span>
+        </div>
+    `
+      }
     }
   })
   item.addEventListener("click", e => {
@@ -315,9 +352,11 @@ function vacSelect() {
   const posSelect = document.querySelector(".select-custom.position")
   if (locSelect) {
     setActiveOption(locSelect.querySelector(`[data-location="${location}"]`),locSelect)
+    locSelect.querySelector(`[data-location="${location}"]`).querySelector("input").checked = true
   } 
   if (posSelect) {
     setActiveOption(posSelect.querySelector(`[data-pos="${position}"]`),posSelect)
+    posSelect.querySelector(`[data-pos="${position}"]`).querySelector("input").checked = true
   }
 }
 const vacMod = document.querySelector("#vac-modal")
@@ -443,6 +482,7 @@ if (document.querySelector(".item-employees")) {
     }
   })
 }
+
 // share
 if (document.querySelector(".share")) {
   const url = encodeURIComponent(window.location.href)
@@ -451,27 +491,27 @@ if (document.querySelector(".share")) {
     {
       title: "VK",
       href: "https://vk.com/share.php?url=" + url + "&title=" + title,
-      img: "<svg><use xlink:href='img/icons/sprite.svg#vk'></use></svg>"
+      img: sprite("vk")
     },
     {
       title: "Одноклассники",
       href: "https://connect.ok.ru/offer?url=" + url + "&title=" + title,
-      img: "<svg><use xlink:href='img/icons/sprite.svg#ok'></use></svg>"
+      img: sprite("ok")
     },
     {
       title: "Телеграм",
       href: "https://t.me/share/url?url=" + url + "&text=" + title,
-      img: "<svg><use xlink:href='img/icons/sprite.svg#telegram'></use></svg>"
+      img: sprite("telegram")
     },
     {
       title: "Viber",
       href: "viber://forward?text=" + url,
-      img: "<svg><use xlink:href='img/icons/sprite.svg#viber'></use></svg>"
+      img: sprite("viber")
     },
     {
       title: "Twitter",
       href: "https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.title + " " + window.location.href),
-      img: "<svg><use xlink:href='img/icons/sprite.svg#twitter'></use></svg>"
+      img: sprite("twitter")
     }    
   ];
   document.querySelector(".share__list").insertAdjacentHTML("beforeend", `
@@ -720,10 +760,10 @@ fancyItems.forEach(item => {
            <div class="modal__content">
               <button class="modal__close" aria-label="Закрыть всплывающее окно"></button>
               <button class="btn swiper-btn swiper-btn--prev">
-                  <svg><use xlink:href="img/icons/sprite.svg#chevron-left"></use></svg>
+                  ${sprite("chevron-left")}
               </button>
               <button class="btn swiper-btn swiper-btn--next">
-                <svg><use xlink:href="img/icons/sprite.svg#chevron-right"></use></svg>
+                  ${sprite("chevron-right")}
               </button>
               <div class="swiper mainswiper">
                 <div class="swiper-wrapper">
@@ -737,7 +777,7 @@ fancyItems.forEach(item => {
               <div class="swiper thumbswiper">
                 <div class="swiper-wrapper">
                    ${imgSrc.map(item => `<a class="swiper-slide">
-                         <div class="swiper-img ${objectFit}">
+                         <div class="swiper-img cover">
                              <img src=${item} alt="">
                          </div>
                      </a>`).join("")}

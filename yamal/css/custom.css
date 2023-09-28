@@ -1,0 +1,5 @@
+[data-error]{color: rgba(217,27,27,.6);font-size:14px;padding-top:4px;font-weight:500;}
+[data-error]:empty{display:none;}
+.form__item.error input{border: 1px solid #d91b1b;}
+mark {background-color: rgba(217,27,27,.2);}
+.evoSearch_highlight{background-color: rgba(217,27,27,.2);color:#000000;}

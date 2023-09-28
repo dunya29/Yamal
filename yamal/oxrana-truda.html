@@ -13,6 +13,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <link href="css/fancybox.min.css" type="text/css" rel="stylesheet">
     <link href="css/style.min.css" type="text/css" rel="stylesheet">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
     <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin> 
     <title>Охрана труда</title>
 </head>
@@ -335,34 +336,41 @@
                 </div>
             </section>
             <!--form-block-->
-<section class="form-block">
-    <div class="container">
-        <div class="form-block__content">
-            <h2>Анонимное обращение</h2>
-            <p>Мы ценим каждого сотрудника, и всегда готовы выслушать</p>
-        </div>
-        <form action="" class="form" onsubmit="event.preventDefault();formSuccess(this)">
-            <div class="form__items">
-                <div class="form__item">
-                    <input type="text" placeholder="Имя">
+            <section class="form-block">
+                <div class="container">
+                    <div class="form-block__content">
+                        <h2>Анонимное обращение</h2>
+                        <p>Мы ценим каждого сотрудника, и всегда готовы выслушать</p>
+                    </div>
+                    <form action="" class="form" onsubmit="event.preventDefault();formSuccess(this)">
+                        <div class="form__items">
+                            <div class="item-form">
+                                <div class="select-custom location" data-select="Регион" aria-expanded="false">
+                                    <div class="select-custom__selected"><span>Регион</span></div>
+                                    <ul class="select-custom__options">
+                                      <li class="select-custom__option"><label><input type="radio" name="location" value="1"><span>Ямало-Ненецкий АО</span></label></li>
+                                      <li class="select-custom__option"><label><input type="radio" name="location" value="2"><span>Красноярский край</span></label></li>
+                                      <li class="select-custom__option"><label><input type="radio" name="location" value="3"><span>Республика Коми</span></label></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="item-form">
+                                <input type="text" placeholder="Почта">
+                            </div>
+                            <div class="item-form">
+                                <textarea placeholder="Сообщение" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                            </div>
+                        </div>
+                        <div class="form__footer">
+                            <label class="item-checkbox">
+                                <input type="checkbox" checked class="required">
+                                <span>Я соглашаюсь на <a href="" target="_blank">обработку моих персональных данных</a></span>
+                            </label>
+                            <button type="submit" class="btn main-btn">Связаться</button>
+                        </div>           
+                    </form>
                 </div>
-                <div class="form__item">
-                    <input type="text" placeholder="Почта или телефон">
-                </div>
-                <div class="form__item">
-                    <textarea placeholder="Сообщение" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
-                </div>
-            </div>
-            <div class="form__footer">
-                <label class="item-checkbox">
-                    <input type="checkbox" checked class="required">
-                    <span>Я соглашаюсь на <a href="" target="_blank">обработку моих персональных данных</a></span>
-                </label>
-                <button type="submit" class="btn main-btn">Связаться</button>
-            </div>           
-        </form>
-    </div>
-</section>
+            </section>
         </main>
          <!--footer-->
         <footer class="footer">

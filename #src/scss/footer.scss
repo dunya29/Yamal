@@ -1,11 +1,6 @@
 .footer {
     border-top: 1px solid rgba(31, 3, 3, 0.30);
     overflow: hidden;
-    &.main-footer {
-        .footer__logo {
-            pointer-events: none;
-        }
-    }
     .container {
         padding-top: 26px;
         padding-bottom: 38px;
@@ -29,7 +24,10 @@
     }
     &__logo {  
         display: block;
-        padding-top: 21px;    
+        padding-top: 21px;  
+        &--main {
+            pointer-events: none;
+        }  
         svg {
             width: 100%;
         }

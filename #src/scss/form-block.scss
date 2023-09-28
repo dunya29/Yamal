@@ -27,6 +27,9 @@
     &__content {
       flex: 0 0 269px;
     }
+    .select-custom {
+      width: 100%;
+    }
     @media (max-width: $bp1) {
       h2 {
         line-height: 1.2;
