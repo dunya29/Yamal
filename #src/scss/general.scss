@@ -153,9 +153,11 @@ h5, .h5 {
       margin: auto;
   }
 }
+.wrap {
+  overflow: hidden;
+}
 section, .section {
   margin-bottom: 100px;
-  overflow: hidden;
   @media (max-width: $bp2) {
     margin-bottom: 50px;
   }

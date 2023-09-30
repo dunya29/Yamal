@@ -46,15 +46,77 @@
                                 </div>
                                 @@include('_custom-select.html')
                             </div>
+                            <div class="purchases__tabs">
+                                <span class="active" data-lot="1">Лот 1</span>
+                                <span data-lot="2">Лот 2</span>
+                                <span data-lot="3">Лот 3</span>
+                                <span data-lot="3">Лот 4</span>
+                                <span data-lot="2">Лот 2</span>
+                                <span data-lot="3">Лот 3</span>
+                                <span data-lot="3">Лот 4</span>
+                                <span data-lot="2">Лот 2</span>
+                                <span data-lot="3">Лот 3</span>
+                                <span data-lot="3">Лот 4</span>
+                                <span data-lot="2">Лот 2</span>
+                                <span data-lot="3">Лот 3</span>
+                                <span data-lot="3">Лот 4</span>
+                                <span data-lot="3">Лот 4</span>
+                                <span data-lot="2">Лот 2</span>
+                                <span data-lot="3">Лот 3</span>
+                                <span data-lot="3">Лот 4</span>
+                                <span data-lot="2">Лот 2</span>
+                                <span data-lot="3">Лот 3</span>
+                                <span data-lot="3">Лот 4</span>
+                                <span data-lot="2">Лот 2</span>
+                                <span data-lot="3">Лот 3</span>
+                                <span data-lot="3">Лот 4</span>
+                            </div>
                             <!--purchases__items-->
                             <div class="purchases__items">
+                                <!--item-purchases-->
+                                <div class="item-purchases active" data-lot="1">
+                                    <div class="item-purchases__header">
+                                        <h3>№127440398</h3>
+                                        <span class="item-purchases__status active">Активный</span>
+                                    </div>
+                                    <div class="item-purchases__row">
+                                        <div class="item-purchases__left">
+                                            <div class="item-purchases__det">
+                                                <span>Наименование</span>
+                                                <span>Щебень ГОСТ 2867-93</span>
+                                            </div>
+                                            <div class="item-purchases__det">
+                                                <span>Базис поставки</span>
+                                                <span>Станция Усинск, Северной ж/д, код станции 288308, код по ОКПО 67793731, ЕЛС 1006530100, ТГНЛ 9724, ООО «ДТК Ямал» ОП «Усинское производственное управление».</span>
+                                            </div>
+                                            <div class="item-purchases__det">
+                                                <span>Дата начала подачи заявок</span>
+                                                <span>До 10.12.2022</span>
+                                            </div>
+                                            <div class="item-purchases__det">
+                                                <span>Дата окончания подачи заявок</span>
+                                                <span>До 10.12.2022</span>
+                                            </div>
+                                        </div>
+                                        <div class="item-purchases__right">
+                                            <div class="item-purchases__det">
+                                                <span>Заказчик</span>
+                                                <span>ООО «ДТК Ямал»</span>
+                                            </div>
+                                            <div class="item-purchases__det">
+                                                <span>Тип закупки</span>
+                                                <span>Прямая</span>
+                                            </div>
+                                            <a href="#" class="btn main-btn">"Открыть</a>
+                                        </div>
+                                    </div>
+                                </div>
                                 @@loop('_item-purchases.html', [
-                                {"status": '<span class="item-purchases__status active">Активный</span>', "link": "Открыть на Тэк-торг"},
-                                {"status": '<span class="item-purchases__status">Завершенный</span>', "link": "Открыть"},
-                                {"status": '<span class="item-purchases__status">Завершенный</span>', "link": "Открыть"}
+                                {"status": '<span class="item-purchases__status active">Активный</span>', "link": "Открыть на Тэк-торг","nmb":"2"},
+                                {"status": '<span class="item-purchases__status">Завершенный</span>', "link": "Открыть","nmb":"3"},
+                                {"status": '<span class="item-purchases__status">Завершенный</span>', "link": "Открыть","nmb":"4"}
                                 ])
                             </div>
-                            @@include('_pagination.html')
                         </div>
                     </div>
                 </div>

@@ -19,26 +19,6 @@ window.addEventListener('orientationchange', windoOnResize);
 function sprite(id) {
   return '<svg><use xlink:href="html/img/icons/sprite.svg#' + id + '"></use></svg>'
 }
-// contact validate
-function contactValidate() {
-  let error = false;
-  document.querySelectorAll("input[name=contact").forEach(function(inp) {
-    if (inp.value.length > 0) {
-      if (/@/.test(inp.value)) {
-        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(inp.value)) {
-          error = true
-          inp.parentNode.classList.add("error")
-        } 
-      } else {         
-        if (!/^((\+7|7|8)([\s\-])?)?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(inp.value)) {
-          error = true
-          inp.parentNode.classList.add("error")
-        }
-      }
-    }
-  })
-  return error
-}
 //enable scroll
 function enableScroll() {
   if (fixedBlocks) {
@@ -49,6 +29,7 @@ function enableScroll() {
 }
 //disable scroll
 function disableScroll() {
+  paddingValue = window.innerWidth > 325 ? window.innerWidth - document.documentElement.clientWidth + 'px' : 0
   if (fixedBlocks) {
     fixedBlocks.forEach(block => block.style.paddingRight = paddingValue)
   }
@@ -122,12 +103,11 @@ function searchFormSuccess(form) {
 function formSuccess(form) {
   form.querySelectorAll(".item-form").forEach(item => item.classList.remove("error"))
   form.querySelectorAll("input").forEach(inp => {
-    if (inp.type != "hidden") {
-      inp.value = ""
-      if (!inp.classList.contains("required")) {
-        inp.checked = false
-      }
-      
+    if (!["hidden", "checkbox", "radio"].includes(inp.type) ) {
+      inp.value = ""      
+    }
+    if (["checkbox", "radio"].includes(inp.type) && !inp.classList.contains("required")) {
+      inp.checked = false
     }
   })
   if (form.querySelector(".select-custom")) {
@@ -145,7 +125,6 @@ function formSuccess(form) {
     form.querySelector(".file-form__items").innerHTML = ""
   }
   if (form.classList.contains("vac-form")) {
-    vacSelect()
     form.querySelector(".vac-extra").classList.remove("open")
     form.querySelectorAll(".vac-extra__items").forEach(item => {
       item.querySelectorAll(".vac-extra__item").forEach((el,idx) => {
@@ -308,25 +287,27 @@ if (form) {
   })
 }
 //file-form
+let fileTypes = ["image/png", "image/jpeg", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/pdf", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]
 document.querySelectorAll(".file-form").forEach(item => {
-  item.querySelector("input").addEventListener("change", e => {
+  item.querySelector("input").addEventListener("change", e => {  
     let files = e.target.files
     for (let i = 0; i < files.length; i++) {
       let file = files[i]
       if (file.size >  10 * 1024 * 1024) {
         item.querySelector("input").value = "" 
         item.classList.add("error")
-        item.querySelector(".file-form__items").innerHTML ="" 
-        item.querySelector("[data-error]")?.remove()
-        if (!item.querySelector(".file-form__error")) {
-          item.insertAdjacentHTML("beforeend",'<div class="file-form__error">Файл должен быть менее 10 МБ</div>')
-        }
+        item.querySelector(".file-form__items").innerHTML = "" 
+        item.querySelector("[data-error]").textContent = "Файл должен быть менее 10 МБ"
+      } else if (!fileTypes.includes(file.type)) {
+        item.querySelector("input").value = "" 
+        item.classList.add("error")
+        item.querySelector(".file-form__items").innerHTML = "" 
+        item.querySelector("[data-error]").textContent = 'Разрешённые форматы: doc,docx,pdf,xls,xlsx,jpg,png'
       } else {
         item.classList.remove("error")
-        item.querySelector(".file-form__error")?.remove()
-        item.querySelector("[data-error]")?.remove()
+        item.querySelector("[data-error]").textContent = "" 
         item.querySelector(".file-form__items").innerHTML = `<div class="file-form__item">
-        <span class="file-form__name">${file.name} ${file.size}KB</span>
+        <span class="file-form__name">${file.name} ${(file.size / 1024).toFixed(2)}KB</span>
         <span class="file-form__del">${sprite("del")}</span>
         </div>
     `
@@ -339,29 +320,16 @@ document.querySelectorAll(".file-form").forEach(item => {
       item.querySelector("input").value = ""
       setTimeout(() => {
          item.querySelector(".file-form__items").innerHTML = ""
+         item.querySelector("[data-error]").textContent = "Необходимо прикрепить резюме либо указать, что его нет"
       }, 0);
      
     }
   }) 
 })
-// vacancy extra items
-function vacSelect() {
-  let location = document.querySelector(".vacancy__info").getAttribute("data-location")
-  let position = document.querySelector(".vacancy__info").getAttribute("data-pos")
-  const locSelect = document.querySelector(".select-custom.location")
-  const posSelect = document.querySelector(".select-custom.position")
-  if (locSelect) {
-    setActiveOption(locSelect.querySelector(`[data-location="${location}"]`),locSelect)
-    locSelect.querySelector(`[data-location="${location}"]`).querySelector("input").checked = true
-  } 
-  if (posSelect) {
-    setActiveOption(posSelect.querySelector(`[data-pos="${position}"]`),posSelect)
-    posSelect.querySelector(`[data-pos="${position}"]`).querySelector("input").checked = true
-  }
-}
 const vacMod = document.querySelector("#vac-modal")
 if (vacMod) {
-  //vacSelect()
+  document.querySelector(".vac-form__loc span").textContent = document.querySelector(".vacancy__info").getAttribute("data-location")
+  document.querySelector(".vac-form__pos span").textContent = document.querySelector(".vacancy__info").getAttribute("data-pos")
   vacMod.querySelector(".cv-btn").addEventListener("change", () => {
     if (vacMod.querySelector(".cv-btn").checked) {
       vacMod.querySelector(".vac-extra").classList.add("open")
@@ -482,7 +450,12 @@ if (document.querySelector(".item-employees")) {
     }
   })
 }
-
+//purchases tabswitch
+const purchNavs = document.querySelectorAll(".purchases__tabs [data-lot]")
+const purchBlocks = document.querySelectorAll(".purchases__items [data-lot]")
+if (document.querySelector(".purchases")) {
+  tabSwitch(purchNavs, purchBlocks)
+}
 // share
 if (document.querySelector(".share")) {
   const url = encodeURIComponent(window.location.href)

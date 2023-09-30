@@ -117,6 +117,59 @@
         }
     }
 }
+.purchases {
+    &__tabs {
+        display: flex;
+        overflow: auto;
+        margin-bottom: 10px; 
+        padding-bottom: 10px;   
+        scrollbar-width: thin;
+        scrollbar-color: $red $white;
+        &::-webkit-scrollbar-thumb {
+          background-color: $red;
+          border-radius: 2px;
+          background-clip: padding-box;  
+        } 
+        &::-webkit-scrollbar {
+          height: 5px;
+          background-color: $white;
+        } 
+        span {
+            color: rgba($black, 0.5);
+            padding: 5px 10px;
+            position: relative;
+            cursor: pointer;
+            transition: all .3s ease-out;
+            white-space: nowrap;
+            user-select: none;
+            &:after {
+                content: "";
+                display: block;
+                height: 2px;
+                background-color: $black;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 0%;
+                transition: all .3s ease-out;
+            }
+            &.active {
+                color: $black;
+                &:after {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &__items .item-purchases {
+        display: none;
+        transition: all .3s linear;
+        &.active {
+            display: block;
+        }
+    }
+}
 .purchase {
     overflow: visible;
     h1 {

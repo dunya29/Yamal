@@ -432,10 +432,13 @@ h5,
   margin: auto;
 }
 
+.wrap {
+  overflow: hidden;
+}
+
 section,
 .section {
   margin-bottom: 100px;
-  overflow: hidden;
 }
 
 .page-content h1,
@@ -4411,6 +4414,21 @@ section,
   margin-left: 18px;
 }
 
+.vac-form__loc,
+.vac-form__pos {
+  margin-bottom: 16px;
+  color: rgba(31, 3, 3, 0.5);
+}
+
+.vac-form__loc span,
+.vac-form__pos span {
+  color: #1F0303;
+}
+
+.vac-form__pos {
+  margin-bottom: 25px;
+}
+
 .item-head .item-contact,
 .item-union .item-contact {
   margin-bottom: 16px;
@@ -4878,6 +4896,77 @@ section,
 .item-purchases__right .main-btn {
   min-width: 202px;
   margin-top: auto;
+}
+
+.purchases__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #D91B1B #ffffff;
+}
+
+.purchases__tabs::-webkit-scrollbar-thumb {
+  background-color: #D91B1B;
+  border-radius: 2px;
+  background-clip: padding-box;
+}
+
+.purchases__tabs::-webkit-scrollbar {
+  height: 5px;
+  background-color: #ffffff;
+}
+
+.purchases__tabs span {
+  color: rgba(31, 3, 3, 0.5);
+  padding: 5px 10px;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.purchases__tabs span:after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #1F0303;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.purchases__tabs span.active {
+  color: #1F0303;
+}
+
+.purchases__tabs span.active:after {
+  left: 0;
+  width: 100%;
+}
+
+.purchases__items .item-purchases {
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.purchases__items .item-purchases.active {
+  display: block;
 }
 
 .purchase {

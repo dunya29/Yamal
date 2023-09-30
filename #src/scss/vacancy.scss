@@ -72,4 +72,16 @@
         }
     }
 }
+.vac-form {
+    &__loc, &__pos {
+        margin-bottom: 16px;
+        color: rgba($black, 0.5);
+        span {
+            color: $black;
+        }
+    }
+    &__pos {
+        margin-bottom: 25px
+    }
+}
 
