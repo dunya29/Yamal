@@ -451,9 +451,9 @@ if (document.querySelector(".item-employees")) {
   })
 }
 //purchases tabswitch
-const purchNavs = document.querySelectorAll(".purchases__tabs [data-lot]")
-const purchBlocks = document.querySelectorAll(".purchases__items [data-lot]")
-if (document.querySelector(".purchases")) {
+const purchNavs = document.querySelectorAll(".purchase__tabs [data-lot]")
+const purchBlocks = document.querySelectorAll(".purchase__lots [data-lot]")
+if (purchNavs) {
   tabSwitch(purchNavs, purchBlocks)
 }
 // share
